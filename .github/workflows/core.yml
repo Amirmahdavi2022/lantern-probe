@@ -31,6 +31,18 @@ name: build lantern core
 # The run does not stop at "it compiled". It starts the host build and pushes real
 # traffic through its SOCKS port - by hostname and by IP literal, because the bridge
 # sends IPs - and fails if nothing comes back.
+#
+# 🚨 CGO is not optional here, which run 1 found the hard way. Two of flashlight's
+# dependencies have no pure-Go path at all:
+#   go-llsqlite/crawshaw           its SQLITE_* constants come from cgo, so with CGO
+#                                  off the file defining them is dropped and they read
+#                                  as undefined
+#   outline-sdk/x/smart            cname_unix.go is //go:build unix AND imports "C";
+#                                  on Linux the !unix alternative is excluded too, so
+#                                  lookupCNAME ends up with no definition at all
+# So the Android builds go through the NDK's clang instead of Go's own toolchain. That
+# is what gomobile was doing for the AAR all along; the difference here is only that
+# the output is an executable rather than a library with a Go runtime bolted in.
 
 on:
   workflow_dispatch:
@@ -218,7 +230,7 @@ jobs:
           cd core
           {
             echo "=== host build ==="
-            CGO_ENABLED=0 go build -o ../lanterncore-host -trimpath -buildvcs=false \
+            CGO_ENABLED=1 go build -o ../lanterncore-host -trimpath -buildvcs=false \
               -ldflags="-s -w -buildid=" .
             ls -la ../lanterncore-host
 
@@ -290,31 +302,40 @@ jobs:
         continue-on-error: true
         env:
           GOFLAGS: -mod=mod
+          ANDROID_NDK_LATEST_HOME: ${{ env.ANDROID_NDK_LATEST_HOME }}
         run: |
           set -o pipefail
           cd core
           {
             mkdir -p "$GITHUB_WORKSPACE/out"
+
+            ndk="${ANDROID_NDK_LATEST_HOME:-$ANDROID_NDK_HOME}"
+            toolchain="$ndk/toolchains/llvm/prebuilt/linux-x86_64/bin"
+            [ -d "$toolchain" ] || { echo "no NDK toolchain under $ndk"; exit 1; }
+            echo "toolchain: $toolchain"
+
             abis="arm64-v8a armeabi-v7a x86_64"
             arches="arm64 arm amd64"
             elfs="b700 2800 3e00"
+            # API 24 rather than the app's minSdk 26: a lower floor costs nothing and
+            # matches how the shaping proxy is already built in the app's own script.
+            triples="aarch64-linux-android24 armv7a-linux-androideabi24 x86_64-linux-android24"
             i=1
             for abi in $abis; do
               arch="$(echo $arches | cut -d' ' -f$i)"
               want="$(echo $elfs | cut -d' ' -f$i)"
+              triple="$(echo $triples | cut -d' ' -f$i)"
               out="$GITHUB_WORKSPACE/out/liblantern-$abi.so"
-              built=""
-              # android first for consistency with the other cores, linux as the
-              # fallback: CGO is off, so the binary is static and Android is Linux.
-              for goos in android linux; do
-                if CGO_ENABLED=0 GOOS="$goos" GOARCH="$arch" GOARM=7 \
-                    go build -o "$out" -trimpath -buildvcs=false \
-                    -ldflags="-s -w -buildid=" . 2>/dev/null; then
-                  built="$goos"
-                  break
-                fi
-              done
-              [ -n "$built" ] || { echo "could not build $abi"; exit 1; }
+              [ -x "$toolchain/${triple}-clang" ] || { echo "no compiler ${triple}-clang"; exit 1; }
+              # buildmode=pie is already the default for GOOS=android and is named here
+              # because Android refuses to execute a non-PIE binary and a silent default
+              # is a poor thing to depend on.
+              CGO_ENABLED=1 GOOS=android GOARCH="$arch" GOARM=7 \
+                CC="$toolchain/${triple}-clang" \
+                CXX="$toolchain/${triple}-clang++" \
+                go build -o "$out" -trimpath -buildvcs=false -buildmode=pie \
+                -ldflags="-s -w -buildid=" . \
+                || { echo "could not build $abi"; exit 1; }
               # Read the ELF machine field, so a binary built for the wrong phone is
               # caught here instead of on someone's device.
               got="$(od -An -tx1 -j18 -N2 "$out" | tr -d ' \n')"
