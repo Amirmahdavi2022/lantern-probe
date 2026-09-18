@@ -215,6 +215,18 @@ jobs:
                   "https://www.google.com/generate_204",
               };
 
+              // Plain HTTP on purpose. An HTTPS request through an HTTP proxy is a CONNECT
+              // tunnel, and a proxy with no working upstream just resets it - which tells
+              // us nothing. On plain HTTP the proxy answers in-band, so flashlight's own
+              // status line and error body come back and can be printed.
+              private static final String HTTP_TARGET = "http://detectportal.firefox.com/success.txt";
+
+              // How long to keep asking after the proxy binds. flashlight returns as soon
+              // as the local socket is up, well before it has fetched config and found
+              // proxies, so a failure in the first seconds is not a verdict.
+              private static final int PASSES = 10;
+              private static final int PASS_GAP_MS = 20000;
+
               private static final String LISTEN_ADDR = "127.0.0.1:0";
               private static final boolean PROXY_ALL = true;
 
@@ -355,24 +367,45 @@ jobs:
                   try { port = LanternManager.INSTANCE.getProxyPort(); } catch (Throwable t) { log("getProxyPort " + t); }
                   log("isRunning=" + running + "  getProxyPort=" + port + "  addr=" + addr);
 
-                  // ---- phase 3: through the proxy ----
+                  // ---- phase 3: through the proxy, repeatedly ----
                   section("3. through lantern");
+                  log("Retrying for up to " + (PASSES * PASS_GAP_MS / 1000) + "s, because flashlight");
+                  log("binds its socket long before it has any upstream proxy.");
                   Proxy p = new Proxy(Proxy.Type.HTTP, addr);
+
                   int ok = 0;
-                  for (String t : TARGETS) {
-                      if (fetch(t, p)) ok++;
+                  int workedAtMs = -1;
+                  for (int pass = 1; pass <= PASSES; pass++) {
+                      log("");
+                      log("pass " + pass + "   t=+" + ((System.currentTimeMillis() - t0) / 1000) + "s");
+                      configDir();
+                      httpProbe(p);
+                      ok = 0;
+                      for (String t : TARGETS) {
+                          if (fetch(t, p)) ok++;
+                      }
+                      if (ok > 0) {
+                          workedAtMs = (int) (System.currentTimeMillis() - t0);
+                          break;
+                      }
+                      if (pass < PASSES) sleep(PASS_GAP_MS);
                   }
 
                   section("verdict");
                   if (ok == 0) {
-                      log("The proxy is listening but not a single request came back through it.");
-                      log("The old pinned core is not reaching the Lantern network.");
+                      log("Nothing came back through the proxy in " + (PASSES * PASS_GAP_MS / 1000) + "s.");
+                      log("The proxy listens but never found a working upstream, so the old");
+                      log("pinned core is not reaching the Lantern network any more.");
+                      log("Look at the config dir lines above: if it stayed empty, flashlight");
+                      log("could not even fetch its own config from this network.");
                   } else if (ok < TARGETS.length) {
-                      log(ok + " of " + TARGETS.length + " targets answered through the proxy.");
-                      log("Partly alive. Check the loc= line above for the exit country.");
+                      log(ok + " of " + TARGETS.length + " targets answered, first success at +"
+                              + (workedAtMs / 1000) + "s.");
+                      log("Partly alive. Check the loc= line for the exit country.");
                   } else {
-                      log("All " + TARGETS.length + " targets answered through the proxy.");
-                      log("The core is alive. Check loc= above - if it is not IR, traffic is really leaving.");
+                      log("All " + TARGETS.length + " targets answered, first success at +"
+                              + (workedAtMs / 1000) + "s.");
+                      log("The core is alive. If loc= is not IR, traffic is really leaving.");
                   }
 
                   try {
@@ -381,6 +414,63 @@ jobs:
                       log("stopped.");
                   } catch (Throwable t) {
                       log("stopLantern " + t);
+                  }
+              }
+
+              /**
+               * Whether flashlight ever managed to write its own config. An empty dir after
+               * a minute means it could not reach its bootstrap at all from this network,
+               * which is a different failure from "fetched config, but every proxy is dead".
+               */
+              private void configDir() {
+                  java.io.File dir = new java.io.File(getFilesDir(), "lantern_config");
+                  java.io.File[] fs = dir.listFiles();
+                  if (fs == null || fs.length == 0) {
+                      log("  config dir  EMPTY");
+                      return;
+                  }
+                  long total = 0;
+                  StringBuilder names = new StringBuilder();
+                  for (java.io.File f : fs) {
+                      total += f.length();
+                      if (names.length() > 0) names.append(", ");
+                      names.append(f.getName()).append('(').append(f.length()).append(')');
+                  }
+                  log("  config dir  " + fs.length + " files, " + total + " bytes");
+                  log("    " + names);
+              }
+
+              /**
+               * Plain HTTP through the proxy. Unlike a CONNECT tunnel this makes flashlight
+               * answer in band, so whatever status and body it produces is visible.
+               */
+              private void httpProbe(Proxy proxy) {
+                  HttpURLConnection c = null;
+                  try {
+                      c = (HttpURLConnection) new URL(HTTP_TARGET).openConnection(proxy);
+                      c.setConnectTimeout(10000);
+                      c.setReadTimeout(10000);
+                      c.setInstanceFollowRedirects(false);
+                      int code = c.getResponseCode();
+                      log("  http probe  " + code + " " + c.getResponseMessage());
+                      InputStream in = (code >= 400) ? c.getErrorStream() : c.getInputStream();
+                      if (in != null) {
+                          BufferedReader r = new BufferedReader(new InputStreamReader(in));
+                          String line;
+                          int n = 0;
+                          while ((line = r.readLine()) != null && n < 4) {
+                              line = line.trim();
+                              if (!line.isEmpty()) {
+                                  log("    " + line);
+                                  n++;
+                              }
+                          }
+                          r.close();
+                      }
+                  } catch (Throwable t) {
+                      log("  http probe  " + t.getClass().getSimpleName() + ": " + t.getMessage());
+                  } finally {
+                      if (c != null) c.disconnect();
                   }
               }
 
