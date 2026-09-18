@@ -1,0 +1,797 @@
+########## BUMP ##########
+=== before ===
+	github.com/getlantern/flashlight/v7 v7.6.179
+	github.com/getlantern/lantern-client v0.0.0-20250122020443-3eec489d072c
+
+=== bumping flashlight to v7.6.241 ===
+go: downloading github.com/getlantern/flashlight/v7 v7.6.241
+go: github.com/getlantern/flashlight/v7@v7.6.241 requires go >= 1.24.2; switching to go1.26.8
+go: downloading go1.26.8 (linux/amd64)
+go: downloading github.com/getlantern/detour v0.0.0-20230503144615-d3106a68f79e
+go: downloading github.com/getlantern/common v1.2.1-0.20230427204521-6ac18c21db39
+go: downloading github.com/getlantern/dnsgrab v0.0.0-20240830183253-5c3e2386c39e
+go: downloading github.com/getlantern/errors v1.0.5-0.20240410211607-f268a297d5d1
+go: downloading github.com/getlantern/eventual/v2 v2.0.2
+go: downloading github.com/getlantern/golog v0.0.0-20230503153817-8e72de7e0a65
+go: downloading github.com/getlantern/netx v0.0.0-20240830183145-c257516187f0
+go: downloading github.com/getlantern/eventual v1.0.0
+go: downloading github.com/jaffee/commandeer v0.6.0
+go: downloading github.com/mitchellh/mapstructure v1.5.0
+go: downloading google.golang.org/protobuf v1.36.5
+go: downloading github.com/getlantern/context v0.0.0-20220418194847-3d5e7a086201
+go: downloading github.com/getlantern/ops v0.0.0-20231025133620-f368ab734534
+go: downloading github.com/go-stack/stack v1.8.1
+go: downloading github.com/Jigsaw-Code/outline-sdk v0.0.19
+go: downloading github.com/OperatorFoundation/Replicant-go/Replicant/v3 v3.0.23
+go: downloading github.com/OperatorFoundation/Starbridge-go/Starbridge/v3 v3.0.17
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: downloading github.com/getlantern/broflake v0.0.0-20250515135912-b53a6690f363
+go: downloading github.com/getlantern/bufconn v0.0.0-20210901195825-fd7c0267b493
+go: downloading github.com/getlantern/cmux/v2 v2.0.0-20230301223233-dac79088a4c0
+go: downloading github.com/getlantern/cmuxprivate v0.0.0-20231025143958-503c5330c30b
+go: downloading github.com/getlantern/cmux v0.0.0-20230301223233-dac79088a4c0
+go: downloading github.com/getlantern/ema v0.0.0-20190620044903-5943d28f40e4
+go: downloading github.com/getlantern/hellosplitter v0.1.1
+go: downloading github.com/getlantern/idletiming v0.0.0-20231030193830-6767b09f86db
+go: downloading github.com/getlantern/kcpwrapper v0.0.0-20230327091313-c12d7c17c6de
+go: downloading github.com/getlantern/keyman v0.0.0-20230503155501-4e864ca2175b
+go: downloading github.com/getlantern/lantern-algeneva v0.0.0-20240930181006-6d3c00db1d5d
+go: downloading github.com/getlantern/lantern-water v0.0.0-20241218135103-60224336cf1d
+go: downloading github.com/getlantern/mtime v0.0.0-20200417132445-23682092d1f7
+go: downloading github.com/getlantern/multipath v0.0.0-20230510135141-717ed305ef50
+go: downloading github.com/getlantern/proxy/v3 v3.0.0-20240328103708-9185589b6a99
+go: downloading github.com/getlantern/psmux v1.5.15
+go: downloading github.com/getlantern/quicwrapper v0.0.0-20250417060014-acb01527c4c2
+go: downloading github.com/getlantern/sing-vmess v0.0.0-20241209111030-0f2c02b4eb9a
+go: downloading github.com/getlantern/tinywss v0.0.0-20211216020538-c10008a7d461
+go: downloading github.com/getlantern/tlsdialer/v3 v3.0.5
+go: downloading github.com/getlantern/tlsmasq v0.4.7-0.20230302000139-6e479a593298
+go: downloading github.com/getlantern/tlsresumption v0.0.0-20241210052744-a1c6aacc1d4d
+go: downloading github.com/getlantern/tlsutil v0.5.3
+go: downloading github.com/mitchellh/go-server-timing v1.0.1
+go: downloading github.com/refraction-networking/utls v1.7.1
+go: downloading github.com/refraction-networking/water v0.7.0-alpha
+go: downloading github.com/sagernet/sing v0.6.0-beta.11
+go: downloading github.com/samber/lo v1.47.0
+go: downloading github.com/xtaci/smux v1.5.35-0.20250217141229-e6b0586a4539
+go: downloading github.com/getlantern/go-socks5 v0.0.0-20171114193258-79d4dd3e2db5
+go: downloading github.com/getlantern/hidden v0.0.0-20220104173330-f221c5a24770
+go: downloading github.com/getlantern/httpseverywhere v0.0.0-20201210200013-19ae11fc4eca
+go: downloading github.com/getlantern/iptool v0.0.0-20230112135223-c00e863b2696
+go: downloading github.com/getlantern/shortcut v0.0.0-20211026183428-bf59a137fdec
+go: downloading github.com/hashicorp/golang-lru v1.0.2
+go: downloading github.com/blang/semver v3.5.1+incompatible
+go: downloading github.com/getlantern/dnstt v0.0.0-20250530230749-4d64f4edcf0f
+go: downloading github.com/getlantern/fronted v0.0.0-20250613043431-4eb545c2da45
+go: downloading github.com/getlantern/kindling v0.0.0-20250625194722-aec3e1e74df1
+go: downloading github.com/getlantern/timezone v0.0.0-20210901200113-3f9de9d360c9
+go: downloading github.com/getlantern/rot13 v0.0.0-20220822172233-370767b2f782
+go: downloading github.com/getlantern/yaml v0.0.0-20190801163808-0c9bb1ebf426
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading github.com/Jigsaw-Code/outline-sdk/x v0.0.2
+go: downloading github.com/alextanhongpin/go-bandit v0.0.0-20191125130111-30de60d69bae
+go: downloading github.com/getlantern/domains v0.0.0-20220311111720-94f59a903271
+go: downloading github.com/getlantern/jibber_jabber v0.0.0-20210901195950-68955124cc42
+go: downloading github.com/getlantern/osversion v0.0.0-20250424174400-d834340603cf
+go: downloading go.opentelemetry.io/otel v1.36.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.35.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.35.0
+go: downloading go.opentelemetry.io/otel/sdk v1.35.0
+go: downloading go.opentelemetry.io/otel/trace v1.36.0
+go: downloading github.com/getsentry/sentry-go v0.31.1
+go: downloading go.uber.org/atomic v1.11.0
+go: downloading github.com/getlantern/event v0.0.0-20210901195647-a7e3145142e6
+go: downloading github.com/getlantern/dns v0.0.0-20240124035051-0d45dd3cfe54
+go: downloading github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c
+go: downloading go.uber.org/zap v1.27.0
+go: downloading github.com/shadowsocks/go-shadowsocks2 v0.1.5
+go: downloading golang.org/x/crypto v0.37.0
+go: downloading github.com/OperatorFoundation/go-shadowsocks2 v1.2.9
+go: downloading github.com/aead/ecdh v0.2.0
+go: downloading golang.org/x/net v0.39.0
+go: downloading github.com/OperatorFoundation/ghostwriter-go v1.0.6
+go: downloading github.com/getlantern/fdcount v0.0.0-20210503151800-5decd65b3731
+go: downloading github.com/stretchr/testify v1.10.0
+go: downloading github.com/mitchellh/go-ps v1.0.0
+go: downloading github.com/getlantern/kcp-go/v5 v5.0.0-20220503142114-f0c1cd6e1b54
+go: downloading github.com/golang/snappy v0.0.4
+go: downloading github.com/coder/websocket v1.8.12
+go: downloading github.com/getlantern/algeneva v0.0.0-20240605225338-caba0b3edf03
+go: downloading github.com/getlantern/byteexec v0.0.0-20220903142956-e6ed20032cfd
+go: downloading github.com/getlantern/elevate v0.0.0-20220903142053-479ab992b264
+go: downloading github.com/anacrolix/chansync v0.6.0
+go: downloading github.com/anacrolix/torrent v1.56.1
+go: downloading go.uber.org/mock v0.5.0
+go: downloading github.com/getlantern/preconn v1.0.0
+go: downloading github.com/google/uuid v1.6.0
+go: downloading github.com/libp2p/go-buffer-pool v0.1.0
+go: downloading github.com/pion/webrtc/v3 v3.3.5
+go: downloading github.com/quic-go/quic-go v0.50.1
+go: downloading github.com/prometheus/client_golang v1.20.5
+go: downloading github.com/pkg/errors v0.9.1
+go: downloading golang.org/x/sync v0.13.0
+go: downloading github.com/gofrs/uuid/v5 v5.3.0
+go: downloading github.com/felixge/httpsnoop v1.0.4
+go: downloading github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f
+go: downloading github.com/dvyukov/go-fuzz v0.0.0-20240924070022-e577bee5275c
+go: downloading github.com/andybalholm/brotli v1.1.1
+go: downloading github.com/cloudflare/circl v1.5.0
+go: downloading github.com/klauspost/compress v1.17.11
+go: downloading golang.org/x/sys v0.32.0
+go: downloading golang.org/x/text v0.24.0
+go: downloading github.com/gaukas/wazerofs v0.1.0
+go: downloading github.com/refraction-networking/wazero v1.7.1-w
+go: downloading github.com/getlantern/hex v0.0.0-20220104173244-ad7e4b9194dc
+go: downloading github.com/alitto/pond/v2 v2.1.6
+go: downloading github.com/getlantern/keepcurrent v0.0.0-20240126172110-2e0264ca385d
+go: downloading github.com/goccy/go-yaml v1.15.13
+go: downloading github.com/tkuchiki/go-timezone v0.2.3
+go: downloading github.com/getlantern/replica v0.14.4
+go: downloading github.com/armon/go-radix v1.0.0
+go: downloading github.com/xtaci/kcp-go/v5 v5.6.20
+go: downloading www.bamsoftware.com/git/dnstt.git v1.20241021.0
+go: downloading github.com/go-logr/logr v1.4.2
+go: downloading go.opentelemetry.io/otel/metric v1.36.0
+go: downloading go.opentelemetry.io/proto/otlp v1.5.0
+go: downloading go.uber.org/multierr v1.11.0
+go: downloading golang.org/x/tools v0.29.0
+go: downloading github.com/davecgh/go-spew v1.1.1
+go: downloading github.com/pmezard/go-difflib v1.0.0
+go: downloading howett.net/plist v1.0.1
+go: downloading github.com/klauspost/reedsolomon v1.12.4
+go: downloading github.com/templexxx/xorsimd v0.4.3
+go: downloading github.com/tjfoc/gmsm v1.4.1
+go: downloading github.com/getlantern/filepersist v0.0.0-20210901195658-ed29a1cb0b7c
+go: downloading github.com/enobufs/go-nats v0.0.1
+go: downloading github.com/quic-go/webtransport-go v0.8.1-0.20241018022711-4ac2c9250e66
+go: downloading github.com/RoaringBitmap/roaring v1.9.4
+go: downloading github.com/anacrolix/dht/v2 v2.22.0
+go: downloading github.com/anacrolix/generics v0.0.3-0.20240902042256-7fb2702ef0ca
+go: downloading github.com/anacrolix/go-libutp v1.3.1
+go: downloading github.com/anacrolix/log v0.16.0
+go: downloading github.com/anacrolix/missinggo v1.3.0
+go: downloading github.com/anacrolix/missinggo/perf v1.0.0
+go: downloading github.com/anacrolix/missinggo/v2 v2.8.0
+go: downloading github.com/anacrolix/multiless v0.4.0
+go: downloading github.com/anacrolix/sync v0.5.3
+go: downloading github.com/anacrolix/upnp v0.1.4
+go: downloading github.com/anacrolix/utp v0.2.0
+go: downloading github.com/bahlo/generic-list-go v0.2.0
+go: downloading github.com/cespare/xxhash v1.1.0
+go: downloading github.com/google/btree v1.1.3
+go: downloading github.com/gorilla/websocket v1.5.3
+go: downloading github.com/pion/datachannel v1.5.10
+go: downloading golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8
+go: downloading golang.org/x/time v0.9.0
+go: downloading github.com/beorn7/perks v1.0.1
+go: downloading github.com/cespare/xxhash/v2 v2.3.0
+go: downloading github.com/prometheus/client_model v0.6.1
+go: downloading github.com/prometheus/common v0.61.0
+go: downloading github.com/prometheus/procfs v0.15.1
+go: downloading github.com/pion/dtls/v2 v2.2.12
+go: downloading github.com/pion/ice/v2 v2.3.37
+go: downloading github.com/pion/interceptor v0.1.37
+go: downloading github.com/pion/logging v0.2.2
+go: downloading github.com/pion/randutil v0.1.0
+go: downloading github.com/pion/rtcp v1.2.15
+go: downloading github.com/pion/rtp v1.8.10
+go: downloading github.com/pion/sctp v1.8.35
+go: downloading github.com/pion/sdp/v3 v3.0.9
+go: downloading github.com/pion/srtp/v2 v2.0.20
+go: downloading github.com/pion/stun v0.6.1
+go: downloading github.com/pion/transport/v2 v2.2.10
+go: downloading github.com/pion/transport v0.14.1
+go: downloading github.com/onsi/ginkgo/v2 v2.22.2
+go: downloading github.com/blang/vfs v1.0.0
+go: downloading github.com/mholt/archiver/v3 v3.5.1
+go: downloading github.com/flynn/noise v1.0.0
+go: downloading github.com/go-logr/stdr v1.2.2
+go: downloading go.opentelemetry.io/auto/sdk v1.1.0
+go: downloading google.golang.org/grpc v1.71.0
+go: downloading github.com/cenkalti/backoff/v4 v4.3.0
+go: downloading github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1
+go: downloading github.com/OperatorFoundation/go-bloom v1.0.1
+go: downloading github.com/templexxx/cpu v0.1.1
+go: downloading github.com/klauspost/cpuid/v2 v2.2.9
+go: downloading github.com/quic-go/qpack v0.5.1
+go: downloading github.com/pion/turn v1.4.0
+go: downloading github.com/bradfitz/iter v0.0.0-20191230175014-e8f45d346db8
+go: downloading github.com/rs/dnscache v0.0.0-20230804202142-fc85eb664529
+go: downloading github.com/anacrolix/mmsg v1.0.0
+go: downloading github.com/huandu/xstrings v1.5.0
+go: downloading github.com/anacrolix/envpprof v1.4.0
+go: downloading github.com/edsrzf/mmap-go v1.2.0
+go: downloading github.com/multiformats/go-multihash v0.2.3
+go: downloading github.com/ajwerner/btree v0.0.0-20211221152037-f427b3e689c0
+go: downloading github.com/tidwall/btree v1.7.0
+go: downloading github.com/go-llsqlite/adapter v0.1.0
+go: downloading go.etcd.io/bbolt v1.3.11
+go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+go: downloading github.com/pion/mdns v0.0.12
+go: downloading github.com/pion/turn/v2 v2.1.6
+go: downloading github.com/pion/transport/v3 v3.0.7
+go: downloading golang.org/x/mod v0.22.0
+go: downloading github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5
+go: downloading github.com/klauspost/pgzip v1.2.5
+go: downloading github.com/nwaples/rardecode v1.1.2
+go: downloading github.com/pierrec/lz4/v4 v4.1.18
+go: downloading github.com/ulikunitz/xz v0.5.11
+go: downloading github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
+go: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a
+go: downloading google.golang.org/genproto/googleapis/api v0.0.0-20250218202821-56aae31c358a
+go: downloading github.com/benbjohnson/immutable v0.4.3
+go: downloading github.com/mr-tron/base58 v1.2.0
+go: downloading github.com/multiformats/go-varint v0.0.7
+go: downloading github.com/go-llsqlite/crawshaw v0.5.5
+go: downloading zombiezen.com/go/sqlite v1.4.0
+go: downloading github.com/anacrolix/confluence v1.15.0
+go: downloading github.com/getlantern/dhtup v0.0.0-20240217002836-8587da02c55c
+go: downloading github.com/getlantern/meta-scrubber v0.0.1
+go: downloading github.com/gorilla/mux v1.8.1
+go: downloading github.com/kennygrant/sanitize v1.2.4
+go: downloading github.com/wlynxg/anet v0.0.5
+go: downloading github.com/go-task/slim-sprig/v3 v3.0.0
+go: downloading github.com/anacrolix/stm v0.5.0
+go: downloading github.com/minio/sha256-simd v1.0.1
+go: downloading modernc.org/libc v1.61.7
+go: downloading github.com/pierrec/lz4 v2.0.5+incompatible
+go: downloading modernc.org/sqlite v1.34.4
+go: downloading github.com/anacrolix/squirrel v0.6.4
+go: downloading github.com/dsoprea/go-png-image-structure v0.0.0-20210512210324-29b889a6093d
+go: downloading github.com/google/pprof v0.0.0-20241210010833-40e02aabc2ad
+go: downloading lukechampine.com/blake3 v1.3.0
+go: downloading github.com/spaolacci/murmur3 v1.1.0
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/ncruces/go-strftime v0.1.9
+go: downloading modernc.org/mathutil v1.7.1
+go: downloading modernc.org/memory v1.8.1
+go: downloading github.com/dsoprea/go-exif/v2 v2.0.0-20230826092837-6579e82b732d
+go: downloading github.com/dsoprea/go-logging v0.0.0-20200710184922-b02d349568dd
+go: downloading github.com/dsoprea/go-utility v0.0.0-20221003172846-a3e1774ef349
+go: downloading github.com/frankban/quicktest v1.14.6
+go: downloading github.com/alecthomas/atomic v0.1.0-alpha2
+go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+go: downloading github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46
+go: downloading github.com/go-errors/errors v1.5.1
+go: downloading github.com/google/go-cmp v0.7.0
+go: downloading github.com/kr/pretty v0.3.1
+go: downloading github.com/bits-and-blooms/bitset v1.20.0
+go: downloading github.com/mschoch/smat v0.2.0
+go: downloading github.com/golang/geo v0.0.0-20230421003525-6adc56603217
+go: downloading gopkg.in/yaml.v2 v2.4.0
+go: downloading github.com/kr/text v0.2.0
+go: downloading github.com/rogpeppe/go-internal v1.13.1
+go: downloading github.com/sirupsen/logrus v1.6.0
+go: downloading go.opentelemetry.io/otel/sdk/metric v1.35.0
+go: upgraded go 1.22.4 => 1.24.2
+go: upgraded github.com/Jigsaw-Code/outline-sdk v0.0.17 => v0.0.19
+go: added github.com/Jigsaw-Code/outline-sdk/x v0.0.2
+go: added github.com/flynn/noise v1.0.0
+go: upgraded github.com/getlantern/broflake v0.0.0-20241220181831-2fc0e2904c90 => v0.0.0-20250515135912-b53a6690f363
+go: added github.com/getlantern/dnstt v0.0.0-20250530230749-4d64f4edcf0f
+go: upgraded github.com/getlantern/flashlight/v7 v7.6.179 => v7.6.241
+go: upgraded github.com/getlantern/fronted v0.0.0-20250104035820-b06365fddbbf => v0.0.0-20250613043431-4eb545c2da45
+go: upgraded github.com/getlantern/keepcurrent v0.0.0-20221014183517-fcee77376b89 => v0.0.0-20240126172110-2e0264ca385d
+go: added github.com/getlantern/kindling v0.0.0-20250625194722-aec3e1e74df1
+go: upgraded github.com/getlantern/osversion v0.0.0-20240418205916-2e84a4a4e175 => v0.0.0-20250424174400-d834340603cf
+go: upgraded github.com/getlantern/quicwrapper v0.0.0-20240229232335-e6b4c3c30b2f => v0.0.0-20250417060014-acb01527c4c2
+go: added github.com/goccy/go-yaml v1.15.13
+go: upgraded github.com/google/go-cmp v0.6.0 => v0.7.0
+go: upgraded github.com/grpc-ecosystem/grpc-gateway/v2 v2.25.1 => v2.26.1
+go: upgraded github.com/quic-go/quic-go v0.48.2 => v0.50.1
+go: upgraded github.com/quic-go/webtransport-go v0.6.0 => v0.8.1-0.20241018022711-4ac2c9250e66
+go: upgraded github.com/refraction-networking/utls v1.6.7 => v1.7.1
+go: upgraded github.com/xtaci/kcp-go/v5 v5.6.1 => v5.6.20
+go: upgraded github.com/xtaci/smux v1.5.33 => v1.5.35-0.20250217141229-e6b0586a4539
+go: upgraded go.opentelemetry.io/otel v1.33.0 => v1.36.0
+go: upgraded go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.19.0 => v1.35.0
+go: upgraded go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.19.0 => v1.35.0
+go: upgraded go.opentelemetry.io/otel/metric v1.33.0 => v1.36.0
+go: upgraded go.opentelemetry.io/otel/sdk v1.33.0 => v1.35.0
+go: upgraded go.opentelemetry.io/otel/trace v1.33.0 => v1.36.0
+go: upgraded golang.org/x/crypto v0.32.0 => v0.37.0
+go: upgraded golang.org/x/net v0.34.0 => v0.39.0
+go: upgraded golang.org/x/sync v0.10.0 => v0.13.0
+go: upgraded golang.org/x/sys v0.29.0 => v0.32.0
+go: upgraded golang.org/x/text v0.21.0 => v0.24.0
+go: upgraded google.golang.org/genproto/googleapis/api v0.0.0-20250106144421-5f5ef82da422 => v0.0.0-20250218202821-56aae31c358a
+go: upgraded google.golang.org/genproto/googleapis/rpc v0.0.0-20250106144421-5f5ef82da422 => v0.0.0-20250218202821-56aae31c358a
+go: upgraded google.golang.org/grpc v1.69.2 => v1.71.0
+go: upgraded google.golang.org/protobuf v1.36.2 => v1.36.5
+go: added www.bamsoftware.com/git/dnstt.git v1.20241021.0
+
+=== bumping lantern-client to latest ===
+go: downloading go1.24.2 (linux/amd64)
+go: downloading github.com/getlantern/lantern-client v0.0.0-20260305122019-97b48c1ee39e
+go: github.com/getlantern/lantern-client@v0.0.0-20260305122019-97b48c1ee39e requires go >= 1.25.1; switching to go1.26.8
+go: downloading github.com/Jigsaw-Code/outline-sdk/x v0.0.7
+go: downloading github.com/Jigsaw-Code/outline-sdk v0.0.20
+go: downloading filippo.io/edwards25519 v1.1.0
+go: downloading github.com/alitto/pond/v2 v2.5.0
+go: downloading github.com/anacrolix/chansync v0.7.0
+go: downloading github.com/anacrolix/confluence v1.16.0
+go: downloading github.com/anacrolix/generics v0.1.0
+go: downloading github.com/anacrolix/dht/v2 v2.23.0
+go: downloading github.com/anacrolix/go-libutp v1.3.2
+go: downloading github.com/anacrolix/log v0.17.0
+go: downloading github.com/anacrolix/lsan v0.1.0
+go: downloading github.com/anacrolix/mmsg v1.1.1
+go: downloading github.com/anacrolix/missinggo/v2 v2.10.0
+go: downloading github.com/anacrolix/sync v0.5.4
+go: downloading github.com/andybalholm/brotli v1.2.0
+go: downloading github.com/bits-and-blooms/bitset v1.24.0
+go: downloading github.com/cloudflare/circl v1.6.1
+go: downloading github.com/anacrolix/torrent v1.59.1
+go: downloading github.com/coder/websocket v1.8.14
+go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
+go: downloading github.com/flynn/noise v1.1.0
+go: downloading github.com/getlantern/algeneva v0.0.0-20250307163401-1824e7b54f52
+go: downloading github.com/getlantern/common v1.2.1-0.20250714155632-4ba0853d882a
+go: downloading github.com/getlantern/dnstt v0.0.0-20250708200949-8cf95aa7897e
+go: downloading github.com/getlantern/fronted v0.0.0-20251001003302-1d5052416fdf
+go: downloading github.com/getlantern/quicwrapper v0.0.0-20250708190430-efdb145a577e
+go: downloading github.com/getlantern/replica v0.15.0
+go: downloading github.com/getsentry/sentry-go v0.35.3
+go: downloading github.com/go-llsqlite/adapter v0.2.0
+go: downloading github.com/go-llsqlite/crawshaw v0.6.0
+go: downloading github.com/go-logr/logr v1.4.3
+go: downloading github.com/goccy/go-yaml v1.18.0
+go: downloading github.com/gofrs/uuid/v5 v5.3.2
+go: downloading github.com/golang/geo v0.0.0-20250929211357-dcefb4abe9c7
+go: downloading github.com/golang/snappy v1.0.0
+go: downloading github.com/google/pprof v0.0.0-20250923004556-9e5a51aed1e8
+go: downloading github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.2
+go: downloading github.com/klauspost/compress v1.18.0
+go: downloading github.com/klauspost/cpuid/v2 v2.3.0
+go: downloading github.com/klauspost/pgzip v1.2.6
+go: downloading github.com/miekg/dns v1.1.68
+go: downloading github.com/klauspost/reedsolomon v1.12.5
+go: downloading github.com/multiformats/go-varint v0.1.0
+go: downloading github.com/nwaples/rardecode v1.1.3
+go: downloading github.com/onsi/ginkgo/v2 v2.25.3
+go: downloading github.com/onsi/gomega v1.38.2
+go: downloading github.com/pierrec/lz4/v4 v4.1.22
+go: downloading github.com/pion/ice/v2 v2.3.38
+go: downloading github.com/pion/interceptor v0.1.41
+go: downloading github.com/pion/logging v0.2.4
+go: downloading github.com/pion/rtp v1.8.22
+go: downloading github.com/pion/sctp v1.8.39
+go: downloading github.com/pion/sdp/v3 v3.0.16
+go: downloading github.com/pion/transport/v3 v3.0.8
+go: downloading github.com/pion/webrtc/v3 v3.3.6
+go: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2
+go: downloading github.com/prometheus/client_golang v1.23.2
+go: downloading github.com/prometheus/client_model v0.6.2
+go: downloading github.com/prometheus/common v0.66.1
+go: downloading github.com/prometheus/procfs v0.17.0
+go: downloading github.com/refraction-networking/utls v1.8.0
+go: downloading github.com/refraction-networking/water v0.7.1-alpha
+go: downloading github.com/rogpeppe/go-internal v1.14.1
+go: downloading github.com/sagernet/sing v0.7.12
+go: downloading github.com/samber/lo v1.51.0
+go: downloading github.com/spf13/pflag v1.0.6
+go: downloading github.com/stretchr/testify v1.11.1
+go: downloading github.com/tidwall/btree v1.8.1
+go: downloading github.com/ulikunitz/xz v0.5.15
+go: downloading github.com/xtaci/kcp-go/v5 v5.6.24
+go: downloading github.com/xtaci/smux v1.5.35
+go: downloading go.etcd.io/bbolt v1.4.3
+go: downloading go.opentelemetry.io/auto/sdk v1.2.1
+go: downloading go.opentelemetry.io/otel v1.38.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.38.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.38.0
+go: downloading go.opentelemetry.io/otel/metric v1.38.0
+go: downloading go.opentelemetry.io/otel/sdk/metric v1.38.0
+go: downloading go.opentelemetry.io/otel/sdk v1.38.0
+go: downloading go.opentelemetry.io/proto/otlp v1.8.0
+go: downloading go.opentelemetry.io/otel/trace v1.38.0
+go: downloading golang.org/x/crypto v0.42.0
+go: downloading go.uber.org/mock v0.6.0
+go: downloading golang.org/x/mod v0.28.0
+go: downloading golang.org/x/sync v0.17.0
+go: downloading golang.org/x/exp v0.0.0-20250911091902-df9299821621
+go: downloading golang.org/x/net v0.44.0
+go: downloading golang.org/x/sys v0.36.0
+go: downloading golang.org/x/text v0.29.0
+go: downloading golang.org/x/time v0.13.0
+go: downloading golang.org/x/tools v0.37.0
+go: downloading google.golang.org/genproto/googleapis/api v0.0.0-20250929231259-57b25ae835d4
+go: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20250929231259-57b25ae835d4
+go: downloading google.golang.org/grpc v1.75.1
+go: downloading google.golang.org/protobuf v1.36.9
+go: downloading lukechampine.com/blake3 v1.4.1
+go: downloading modernc.org/cc/v4 v4.26.5
+go: downloading modernc.org/ccgo/v4 v4.28.1
+go: downloading modernc.org/fileutil v1.3.40
+go: downloading modernc.org/gc/v2 v2.6.5
+go: downloading modernc.org/libc v1.66.10
+go: downloading modernc.org/memory v1.11.0
+go: downloading modernc.org/sqlite v1.39.0
+go: downloading zombiezen.com/go/sqlite v1.4.2
+go: upgraded go 1.24.2 => 1.25.1
+go: upgraded github.com/Jigsaw-Code/outline-sdk v0.0.19 => v0.0.20
+go: upgraded github.com/Jigsaw-Code/outline-sdk/x v0.0.2 => v0.0.7
+go: upgraded github.com/alitto/pond/v2 v2.1.6 => v2.5.0
+go: upgraded github.com/anacrolix/chansync v0.6.0 => v0.7.0
+go: upgraded github.com/anacrolix/confluence v1.15.0 => v1.16.0
+go: upgraded github.com/anacrolix/dht/v2 v2.22.0 => v2.23.0
+go: upgraded github.com/anacrolix/generics v0.0.3-0.20240902042256-7fb2702ef0ca => v0.1.0
+go: upgraded github.com/anacrolix/go-libutp v1.3.1 => v1.3.2
+go: upgraded github.com/anacrolix/log v0.16.0 => v0.17.0
+go: upgraded github.com/anacrolix/missinggo/v2 v2.8.0 => v2.10.0
+go: upgraded github.com/anacrolix/mmsg v1.0.0 => v1.1.1
+go: upgraded github.com/anacrolix/sync v0.5.3 => v0.5.4
+go: upgraded github.com/anacrolix/torrent v1.56.1 => v1.59.1
+go: upgraded github.com/andybalholm/brotli v1.1.1 => v1.2.0
+go: upgraded github.com/bits-and-blooms/bitset v1.20.0 => v1.24.0
+go: upgraded github.com/cloudflare/circl v1.5.0 => v1.6.1
+go: upgraded github.com/coder/websocket v1.8.12 => v1.8.14
+go: upgraded github.com/davecgh/go-spew v1.1.1 => v1.1.2-0.20180830191138-d8f796af33cc
+go: upgraded github.com/flynn/noise v1.0.0 => v1.1.0
+go: upgraded github.com/getlantern/algeneva v0.0.0-20240605225338-caba0b3edf03 => v0.0.0-20250307163401-1824e7b54f52
+go: upgraded github.com/getlantern/common v1.2.1-0.20230427204521-6ac18c21db39 => v1.2.1-0.20250714155632-4ba0853d882a
+go: upgraded github.com/getlantern/dnstt v0.0.0-20250530230749-4d64f4edcf0f => v0.0.0-20250708200949-8cf95aa7897e
+go: upgraded github.com/getlantern/fronted v0.0.0-20250613043431-4eb545c2da45 => v0.0.0-20251001003302-1d5052416fdf
+go: upgraded github.com/getlantern/lantern-client v0.0.0-20250122020443-3eec489d072c => v0.0.0-20260305122019-97b48c1ee39e
+go: upgraded github.com/getlantern/quicwrapper v0.0.0-20250417060014-acb01527c4c2 => v0.0.0-20250708190430-efdb145a577e
+go: upgraded github.com/getlantern/replica v0.14.4 => v0.15.0
+go: upgraded github.com/getsentry/sentry-go v0.31.1 => v0.35.3
+go: upgraded github.com/go-llsqlite/adapter v0.1.0 => v0.2.0
+go: upgraded github.com/go-llsqlite/crawshaw v0.5.5 => v0.6.0
+go: upgraded github.com/go-logr/logr v1.4.2 => v1.4.3
+go: upgraded github.com/goccy/go-yaml v1.15.13 => v1.18.0
+go: upgraded github.com/gofrs/uuid/v5 v5.3.0 => v5.3.2
+go: upgraded github.com/golang/geo v0.0.0-20230421003525-6adc56603217 => v0.0.0-20250929211357-dcefb4abe9c7
+go: upgraded github.com/golang/snappy v0.0.4 => v1.0.0
+go: upgraded github.com/google/pprof v0.0.0-20241210010833-40e02aabc2ad => v0.0.0-20250923004556-9e5a51aed1e8
+go: upgraded github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1 => v2.27.2
+go: upgraded github.com/klauspost/compress v1.17.11 => v1.18.0
+go: upgraded github.com/klauspost/cpuid/v2 v2.2.9 => v2.3.0
+go: upgraded github.com/klauspost/pgzip v1.2.5 => v1.2.6
+go: upgraded github.com/klauspost/reedsolomon v1.12.4 => v1.12.5
+go: upgraded github.com/multiformats/go-varint v0.0.7 => v0.1.0
+go: upgraded github.com/nwaples/rardecode v1.1.2 => v1.1.3
+go: upgraded github.com/onsi/ginkgo/v2 v2.22.2 => v2.25.3
+go: upgraded github.com/pierrec/lz4/v4 v4.1.18 => v4.1.22
+go: upgraded github.com/pion/ice/v2 v2.3.37 => v2.3.38
+go: upgraded github.com/pion/interceptor v0.1.37 => v0.1.41
+go: upgraded github.com/pion/logging v0.2.2 => v0.2.4
+go: upgraded github.com/pion/rtp v1.8.10 => v1.8.22
+go: upgraded github.com/pion/sctp v1.8.35 => v1.8.39
+go: upgraded github.com/pion/sdp/v3 v3.0.9 => v3.0.16
+go: upgraded github.com/pion/transport/v3 v3.0.7 => v3.0.8
+go: upgraded github.com/pion/webrtc/v3 v3.3.5 => v3.3.6
+go: upgraded github.com/pmezard/go-difflib v1.0.0 => v1.0.1-0.20181226105442-5d4384ee4fb2
+go: upgraded github.com/prometheus/client_golang v1.20.5 => v1.23.2
+go: upgraded github.com/prometheus/client_model v0.6.1 => v0.6.2
+go: upgraded github.com/prometheus/common v0.61.0 => v0.66.1
+go: upgraded github.com/prometheus/procfs v0.15.1 => v0.17.0
+go: upgraded github.com/refraction-networking/utls v1.7.1 => v1.8.0
+go: upgraded github.com/refraction-networking/water v0.7.0-alpha => v0.7.1-alpha
+go: upgraded github.com/rogpeppe/go-internal v1.13.1 => v1.14.1
+go: upgraded github.com/sagernet/sing v0.6.0-beta.11 => v0.7.12
+go: upgraded github.com/samber/lo v1.47.0 => v1.51.0
+go: upgraded github.com/stretchr/testify v1.10.0 => v1.11.1
+go: upgraded github.com/tetratelabs/wazero v1.7.1 => v1.7.3
+go: upgraded github.com/tidwall/btree v1.7.0 => v1.8.1
+go: upgraded github.com/ulikunitz/xz v0.5.11 => v0.5.15
+go: upgraded github.com/xtaci/kcp-go/v5 v5.6.20 => v5.6.24
+go: upgraded github.com/xtaci/smux v1.5.35-0.20250217141229-e6b0586a4539 => v1.5.35
+go: upgraded go.etcd.io/bbolt v1.3.11 => v1.4.3
+go: upgraded go.opentelemetry.io/auto/sdk v1.1.0 => v1.2.1
+go: upgraded go.opentelemetry.io/otel v1.36.0 => v1.38.0
+go: upgraded go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.35.0 => v1.38.0
+go: upgraded go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.35.0 => v1.38.0
+go: upgraded go.opentelemetry.io/otel/metric v1.36.0 => v1.38.0
+go: upgraded go.opentelemetry.io/otel/sdk v1.35.0 => v1.38.0
+go: upgraded go.opentelemetry.io/otel/trace v1.36.0 => v1.38.0
+go: upgraded go.opentelemetry.io/proto/otlp v1.5.0 => v1.8.0
+go: upgraded go.uber.org/mock v0.5.0 => v0.6.0
+go: upgraded golang.org/x/crypto v0.37.0 => v0.42.0
+go: upgraded golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8 => v0.0.0-20250911091902-df9299821621
+go: upgraded golang.org/x/mod v0.22.0 => v0.28.0
+go: upgraded golang.org/x/net v0.39.0 => v0.44.0
+go: upgraded golang.org/x/sync v0.13.0 => v0.17.0
+go: upgraded golang.org/x/sys v0.32.0 => v0.36.0
+go: upgraded golang.org/x/text v0.24.0 => v0.29.0
+go: upgraded golang.org/x/time v0.9.0 => v0.13.0
+go: upgraded golang.org/x/tools v0.29.0 => v0.37.0
+go: upgraded google.golang.org/genproto/googleapis/api v0.0.0-20250218202821-56aae31c358a => v0.0.0-20250929231259-57b25ae835d4
+go: upgraded google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a => v0.0.0-20250929231259-57b25ae835d4
+go: upgraded google.golang.org/grpc v1.71.0 => v1.75.1
+go: upgraded google.golang.org/protobuf v1.36.5 => v1.36.9
+go: upgraded lukechampine.com/blake3 v1.3.0 => v1.4.1
+go: upgraded modernc.org/libc v1.61.7 => v1.66.10
+go: upgraded modernc.org/memory v1.8.1 => v1.11.0
+go: upgraded modernc.org/sqlite v1.34.4 => v1.39.0
+go: upgraded zombiezen.com/go/sqlite v1.4.0 => v1.4.2
+
+=== go mod tidy ===
+go: downloading go1.25.1 (linux/amd64)
+go: downloading github.com/getlantern/mockconn v0.0.0-20200818071412-cb30d065a848
+go: downloading github.com/getlantern/uuid v1.2.0
+go: downloading go.uber.org/goleak v1.3.0
+go: downloading github.com/getlantern/grtrack v0.0.0-20231025115619-bfbfadb228f3
+go: downloading github.com/getlantern/tlsdefaults v0.0.0-20171004213447-cf35cfd0b1b4
+go: downloading github.com/getlantern/waitforserver v1.0.1
+go: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
+go: downloading github.com/google/gopacket v1.1.19
+go: downloading github.com/kataras/golog v0.1.9
+go: downloading github.com/getlantern/nettest v1.0.0
+go: downloading github.com/onsi/ginkgo v1.16.5
+go: downloading github.com/pivotal-cf-experimental/jibber_jabber v0.0.0-20151120183258-bcc4c8345a21
+go: downloading github.com/pingcap/errors v0.11.4
+go: downloading github.com/kataras/pio v0.0.12
+go: downloading github.com/xtaci/lossyconn v0.0.0-20200209145036-adba10fffc37
+go: downloading github.com/pion/webrtc/v4 v4.1.4
+go: downloading github.com/go-quicktest/qt v1.101.0
+go: downloading github.com/xyproto/randomstring v1.0.5
+go: downloading github.com/stretchr/objx v0.5.2
+go: downloading github.com/Psiphon-Labs/psiphon-tunnel-core v1.0.11-0.20250319154633-ceb78316d06e
+go: downloading github.com/cenkalti/backoff/v5 v5.0.3
+go: downloading github.com/riobard/go-bloom v0.0.0-20200614022211-cdc8013cb5b3
+go: downloading go.uber.org/automaxprocs v1.6.0
+go: downloading go.yaml.in/yaml/v2 v2.4.3
+go: downloading github.com/OneOfOne/xxhash v1.2.8
+go: downloading github.com/things-go/go-socks5 v0.0.5
+go: downloading go.yaml.in/yaml/v3 v3.0.4
+go: downloading github.com/pion/dtls/v3 v3.0.7
+go: downloading github.com/pion/ice/v4 v4.0.10
+go: downloading github.com/pion/srtp/v3 v3.0.8
+go: downloading github.com/pion/stun/v3 v3.0.0
+go: downloading github.com/nxadm/tail v1.4.11
+go: downloading github.com/francoispqt/gojay v1.2.13
+go: downloading github.com/Masterminds/semver/v3 v3.4.0
+go: downloading github.com/protolambda/ctxlock v0.1.0
+go: downloading github.com/pion/mdns/v2 v2.0.7
+go: downloading github.com/pion/turn/v4 v4.1.1
+go: downloading github.com/golang/protobuf v1.5.4
+go: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
+go: downloading github.com/Psiphon-Labs/bolt v0.0.0-20200624191537-23cedaef7ad7
+go: downloading github.com/Psiphon-Labs/goptlib v0.0.0-20200406165125-c0e32a7a3464
+go: downloading github.com/Psiphon-Labs/psiphon-tls v0.0.0-20250318183125-2a2fae2db378
+go: downloading github.com/Psiphon-Labs/utls v0.0.0-20250311210446-c1daf1ce55c1
+go: downloading github.com/cognusion/go-cache-lru v0.0.0-20170419142635-f73e2280ecea
+go: downloading github.com/dgraph-io/badger v1.6.2
+go: downloading github.com/fxamacker/cbor/v2 v2.9.0
+go: downloading github.com/grafov/m3u8 v0.12.1
+go: downloading github.com/elazarl/goproxy v1.7.2
+go: downloading github.com/fsnotify/fsnotify v1.7.0
+go: downloading github.com/syndtr/gocapability v0.0.0-20200815063812-42c35b437635
+go: downloading github.com/wader/filtertransport v0.0.0-20200316221534-bdd9e61eee78
+go: downloading github.com/Psiphon-Labs/consistent v0.0.0-20240322131436-20aaa4e05737
+go: downloading github.com/Psiphon-Labs/quic-go v0.0.0-20250318213212-301924cbe026
+go: downloading github.com/bits-and-blooms/bloom/v3 v3.7.0
+go: downloading github.com/marusama/semaphore v0.0.0-20190110074507-6952cef993b2
+go: downloading golang.zx2c4.com/wireguard v0.0.0-20250521234502-f333402bd9cb
+go: downloading tailscale.com v1.88.3
+go: downloading github.com/go-ole/go-ole v1.3.0
+go: downloading golang.zx2c4.com/wireguard/windows v0.5.3
+go: downloading github.com/armon/go-proxyproto v0.1.0
+go: downloading github.com/refraction-networking/conjure v0.9.1
+go: downloading github.com/refraction-networking/gotapdance v1.7.10
+go: downloading modernc.org/goabi0 v0.2.0
+go: downloading github.com/dgraph-io/ristretto v0.2.0
+go: downloading github.com/Jigsaw-Code/outline-ss-server v1.8.0
+go: downloading github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8
+go: downloading github.com/oschwald/maxminddb-golang v1.13.1
+go: downloading github.com/sirupsen/logrus v1.9.3
+go: downloading github.com/x448/float16 v0.8.4
+go: downloading gonum.org/v1/gonum v0.16.0
+go: downloading golang.org/x/term v0.35.0
+go: downloading github.com/tailscale/goupnp v1.0.1-0.20210804011211-c64d0f06ea05
+go: downloading go4.org/mem v0.0.0-20240501181205-ae6ca9944745
+go: downloading github.com/bifurcation/mint v0.0.0-20210616192047-fd18df995463
+go: downloading github.com/cheekybits/genny v1.0.0
+go: downloading gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2 v2.11.0
+go: downloading github.com/libp2p/go-reuseport v0.4.0
+go: downloading github.com/refraction-networking/ed25519 v0.1.2
+go: downloading modernc.org/opt v0.1.4
+go: downloading modernc.org/sortutil v1.2.1
+go: downloading modernc.org/strutil v1.2.1
+go: downloading modernc.org/token v1.1.0
+go: downloading github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96
+go: downloading github.com/dgryski/go-farm v0.0.0-20240924180020-3414d57e47da
+go: downloading github.com/sergeyfrolov/bsbuffer v0.0.0-20180903213811-94e85abb8507
+go: downloading github.com/alecthomas/assert/v2 v2.3.0
+go: downloading github.com/jsimonetti/rtnetlink v1.4.2
+go: downloading github.com/mdlayher/netlink v1.8.0
+go: downloading go4.org/netipx v0.0.0-20231129151722-fdeea329fbba
+go: downloading github.com/coreos/go-iptables v0.8.0
+go: downloading github.com/google/nftables v0.3.0
+go: downloading github.com/tailscale/netlink v1.1.1-0.20240822203006-4d49adab4de7
+go: downloading github.com/vishvananda/netns v0.0.5
+go: downloading github.com/refraction-networking/obfs4 v0.1.2
+go: downloading gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib v1.6.0
+go: downloading filippo.io/keygen v0.0.0-20250927102231-0bd8de87e620
+go: downloading github.com/mroth/weightedrand v1.0.0
+go: downloading github.com/pelletier/go-toml v1.9.5
+go: downloading github.com/go-json-experiment/json v0.0.0-20250910080747-cc2cfa0554c3
+go: downloading github.com/alecthomas/repr v0.0.0-20210801044451-80ca428c5142
+go: downloading github.com/hexops/gotextdiff v1.0.3
+go: downloading github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e
+go: downloading github.com/dblohm7/wingoes v0.0.0-20250822163801-6d8e6105c62d
+go: downloading github.com/mdlayher/socket v0.5.1
+go: downloading github.com/dchest/siphash v1.2.3
+go: downloading github.com/BurntSushi/toml v0.3.1
+go: downloading github.com/go-redis/redis/v8 v8.11.5
+go: downloading filippo.io/bigmod v0.1.0
+go: downloading github.com/oschwald/geoip2-golang v1.11.0
+go: downloading github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
+go: downloading github.com/BurntSushi/toml v1.4.1-0.20240526193622-a339e1f7089c
+go: downloading github.com/elazarl/goproxy/ext v0.0.0-20200809112317-0581fc3aee2d
+go: downloading github.com/deckarep/golang-set v0.0.0-20171013212420-1d4478f51bed
+go: downloading github.com/Psiphon-Inc/rotate-safe-writer v0.0.0-20210303140923-464a7a37606e
+go: downloading github.com/shirou/gopsutil/v4 v4.24.5
+go: downloading github.com/patrickmn/go-cache v2.1.0+incompatible
+go: downloading github.com/gobwas/glob v0.2.4-0.20180402141543-f00a7392b439
+go: downloading github.com/twmb/murmur3 v1.1.6
+go: downloading github.com/ryanuber/go-glob v0.0.0-20170128012129-256dc444b735
+go: downloading github.com/prashantv/gostub v1.1.0
+go: downloading github.com/florianl/go-nfqueue v1.1.1-0.20200829120558-a2f196e98ab0
+go: downloading github.com/lufia/plan9stats v0.0.0-20220913051719-115f729f3c8c
+go: downloading github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c
+go: downloading github.com/shoenig/go-m1cpu v0.1.6
+go: downloading github.com/tklauser/go-sysconf v0.3.12
+go: downloading github.com/yusufpapurcu/wmi v1.2.4
+go: downloading github.com/creachadair/taskgroup v0.13.2
+go: downloading github.com/tklauser/numcpus v0.6.1
+go: downloading github.com/cilium/ebpf v0.15.0
+go: downloading github.com/pebbe/zmq4 v1.2.11
+go: downloading github.com/canonical/go-sp800.90a-drbg v0.0.0-20210314144037-6eeb1040d6c3
+go: downloading golang.org/x/xerrors v0.0.0-20240716161551-93cc26a95ae9
+
+=== after ===
+	github.com/getlantern/flashlight/v7 v7.6.241
+	github.com/getlantern/lantern-client v0.0.0-20260305122019-97b48c1ee39e
+
+=== does the wrapper still compile? ===
+wrapper compiles
+
+########## BUILD ##########
+Building Lantern library...
+go env -w 'GOPRIVATE=github.com/getlantern/*' && \
+go install golang.org/x/mobile/cmd/gomobile@latest && \
+go get golang.org/x/mobile/bind && \
+gomobile init && \
+gomobile bind -target=android -tags='headless lantern' -o=build/liblantern.aar \
+	-androidapi=23 \
+	-ldflags="-s -w -checklinkname=0" ./lantern
+go: downloading golang.org/x/mobile v0.0.0-20260908204917-8b95e45f8d3e
+go: golang.org/x/mobile@v0.0.0-20260908204917-8b95e45f8d3e requires go >= 1.26.0; switching to go1.26.8
+go: downloading golang.org/x/mod v0.41.0
+go: downloading golang.org/x/sync v0.23.0
+go: downloading golang.org/x/tools v0.50.0
+go: golang.org/x/mobile@v0.0.0-20260908204917-8b95e45f8d3e requires go >= 1.26.0; switching to go1.26.8
+go: downloading golang.org/x/crypto v0.57.0
+go: downloading golang.org/x/net v0.59.0
+go: downloading golang.org/x/sys v0.48.0
+go: downloading golang.org/x/term v0.46.0
+go: downloading golang.org/x/text v0.42.0
+go: upgraded go 1.25.1 => 1.26.0
+go: upgraded golang.org/x/crypto v0.42.0 => v0.57.0
+go: upgraded golang.org/x/mobile v0.0.0-20250106192035-c31d5b91ecc3 => v0.0.0-20260908204917-8b95e45f8d3e
+go: upgraded golang.org/x/mod v0.28.0 => v0.41.0
+go: upgraded golang.org/x/net v0.44.0 => v0.59.0
+go: upgraded golang.org/x/sync v0.17.0 => v0.23.0
+go: upgraded golang.org/x/sys v0.36.0 => v0.48.0
+go: upgraded golang.org/x/text v0.29.0 => v0.42.0
+go: upgraded golang.org/x/tools v0.37.0 => v0.50.0
+echo "Copying AAR to sdk/libs..."
+Copying AAR to sdk/libs...
+mkdir -p sdk/libs
+cp build/liblantern.aar sdk/libs/liblantern.aar
+echo "Lantern: build/liblantern.aar"
+Lantern: build/liblantern.aar
+./gradlew clean :sdk:assembleRelease
+Downloading https://services.gradle.org/distributions/gradle-8.12-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.12!
+
+Here are the highlights of this release:
+ - Enhanced error and warning reporting with the Problems API
+ - File-system watching support on Alpine Linux
+ - Build and test Swift 6 libraries and apps
+
+For more details see https://docs.gradle.org/8.12/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :example
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+WARNING: Using flatDir2 should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :sdk
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+Configuration 'embed' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'debugEmbed' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'releaseEmbed' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+
+> Task :clean
+> Task :example:clean UP-TO-DATE
+> Task :sdk:clean UP-TO-DATE
+> Task :sdk:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :sdk:preBuild UP-TO-DATE
+
+> Task :sdk:preReleaseEmbed
+[fat-aar][embed detected][aar]:liblantern:
+
+> Task :sdk:preReleaseBuild
+> Task :sdk:generateReleaseResValues
+> Task :sdk:dataBindingMergeDependencyArtifactsRelease
+> Task :sdk:explodeLiblanternRelease
+> Task :sdk:generateReleaseResources
+> Task :sdk:packageReleaseResources
+> Task :sdk:dataBindingTriggerRelease
+> Task :sdk:parseReleaseLocalResources
+> Task :sdk:javaPreCompileRelease
+> Task :sdk:dataBindingGenBaseClassesRelease
+> Task :sdk:generateReleaseRFile
+> Task :sdk:mergeReleaseJniLibFolders
+> Task :sdk:extractDeepLinksForAarRelease
+> Task :sdk:mergeReleaseShaders
+> Task :sdk:compileReleaseShaders NO-SOURCE
+> Task :sdk:generateReleaseAssets UP-TO-DATE
+> Task :sdk:packageReleaseAssets
+> Task :sdk:prepareLintJarForPublish
+> Task :sdk:prepareReleaseArtProfile
+> Task :sdk:writeReleaseAarMetadata
+> Task :sdk:mergeReleaseNativeLibs
+> Task :sdk:mapReleaseSourceSetPaths
+
+> Task :sdk:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libgojni.so.
+
+> Task :sdk:mergeReleaseResources
+> Task :sdk:processReleaseManifest
+> Task :sdk:copyReleaseJniLibsProjectAndLocalJars
+> Task :sdk:verifyReleaseResources
+> Task :sdk:compileReleaseKotlin
+> Task :sdk:compileReleaseJavaWithJavac
+> Task :sdk:mergeClassesRelease
+> Task :sdk:extractReleaseAnnotations
+> Task :sdk:processReleaseJavaRes
+> Task :sdk:mergeReleaseJavaResource
+> Task :sdk:transformReleaseClassesWithAsm
+> Task :sdk:syncReleaseLibJars
+> Task :sdk:mergeJarsRelease
+> Task :sdk:mergeReleaseGeneratedProguardFiles
+> Task :sdk:mergeReleaseConsumerProguardFiles
+> Task :sdk:bundleReleaseAar
+> Task :sdk:assembleRelease
+
+[Incubating] Problems report is available at: file:///home/runner/work/lantern-probe/lantern-probe/sdk-src/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.12/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 20s
+40 actionable tasks: 38 executed, 2 up-to-date
+cp build/sdk/outputs/aar/sdk-release.aar ./build/lanternsdk-android.aar
+
+########## PUBLISH ##########
++ gh release delete aar-latest --repo Amirmahdavi2022/lantern-probe --yes --cleanup-tag
+release not found
++ echo 'delete skipped'
+delete skipped
++ gh release create aar-latest sdk-src/build/lanternsdk-android.aar --repo Amirmahdavi2022/lantern-probe --title lanternsdk-android.aar --notes 'Built from getlantern/lanternsdk-android with the flashlight pin bumped.'
+https://github.com/Amirmahdavi2022/lantern-probe/releases/tag/aar-latest
+total 66512
+drwxr-xr-x  4 runner runner     4096 Sep 18 09:53 .
+drwxr-xr-x 12 runner runner     4096 Sep 18 09:53 ..
+-rw-r--r--  1 runner runner 68089942 Sep 18 09:53 lanternsdk-android.aar
+drwxr-xr-x  3 runner runner     4096 Sep 18 09:53 reports
+drwxr-xr-x  7 runner runner     4096 Sep 18 09:53 sdk
