@@ -38,9 +38,16 @@ jobs:
           mkdir -p proj/app/libs
 
           cat > proj/settings.gradle <<'PROBE_EOF_0'
+          // repo.maven.apache.org rate-limits GitHub's shared runner IPs and answers 429,
+          // which kills the build during dependency resolution. Google's GCS mirror of
+          // Maven Central is tried first; mavenCentral() stays last as the fallback, so
+          // nothing is lost if the mirror is missing an artifact.
+          // (pluginManagement has to be the first statement in this file, so the mirror
+          // URL is written out twice rather than held in a variable.)
           pluginManagement {
               repositories {
                   google()
+                  maven { url 'https://maven-central.storage-download.googleapis.com/maven2/' }
                   mavenCentral()
                   gradlePluginPortal()
               }
@@ -50,6 +57,7 @@ jobs:
               repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
               repositories {
                   google()
+                  maven { url 'https://maven-central.storage-download.googleapis.com/maven2/' }
                   mavenCentral()
               }
           }
@@ -501,7 +509,27 @@ jobs:
         run: |
           set -o pipefail
           cd proj
-          gradle --no-daemon --stacktrace assembleDebug 2>&1 | tee ../build.log
+          # Maven Central answers 429 to GitHub's shared runners often enough that
+          # one attempt is not a verdict. Three tries, well spaced.
+          for attempt in 1 2 3; do
+            echo "=== gradle attempt $attempt ===" >> ../build.log
+            # Each attempt gets its own file, so the 429 check reads THIS
+            # attempt's output and not a previous one's.
+            if gradle --no-daemon --stacktrace assembleDebug 2>&1 | tee "../attempt-$attempt.log"; then
+              cat "../attempt-$attempt.log" >> ../build.log
+              echo "=== attempt $attempt succeeded ===" >> ../build.log
+              exit 0
+            fi
+            cat "../attempt-$attempt.log" >> ../build.log
+            if grep -q "Too Many Requests" "../attempt-$attempt.log"; then
+              echo "=== attempt $attempt rate limited, waiting 90s ===" >> ../build.log
+              sleep 90
+            else
+              echo "=== attempt $attempt failed for a real reason, stopping ===" >> ../build.log
+              exit 1
+            fi
+          done
+          exit 1
 
       - name: Collect result
         id: collect
