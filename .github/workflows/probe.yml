@@ -100,6 +100,11 @@ jobs:
               }
 
               compileOptions {
+                  // The AAR's own aar-metadata.properties carries
+                  // coreLibraryDesugaringEnabled=true and
+                  // desugarJdkLib=com.android.tools:desugar_jdk_libs:2.0.3,
+                  // so AGP refuses to build without both of these.
+                  coreLibraryDesugaringEnabled true
                   sourceCompatibility JavaVersion.VERSION_1_8
                   targetCompatibility JavaVersion.VERSION_1_8
               }
@@ -112,6 +117,9 @@ jobs:
 
           dependencies {
               implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+              // Exactly the version the AAR names. Lower fails the metadata check.
+              coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
 
               // Not optional. LanternManager.startLantern() calls ProxyHelper.setProxy(),
               // which builds an OkHttpClient, and the AAR carries no dependency metadata,
