@@ -337,12 +337,31 @@ jobs:
               # started rejecting linknames to unexported std symbols, so without this flag the
               # link step fails with "invalid reference to net.zoneCache". It is also why the
               # host build passed while this one did not: anet is not in a linux build at all.
+              # 🚨 -static-libstdc++ is what makes this runnable on a phone at all. Without it the
+              # binary comes out NEEDING libc++_shared.so, which is an NDK library and is NOT on
+              # an Android device - the process would die at exec with "CANNOT LINK EXECUTABLE",
+              # before a single line of its own code ran. Upstream's own SDK wrapper carries the
+              # same flag in its cgo directive. The alternative, shipping libc++_shared.so beside
+              # it, is one more file to keep in step for no gain.
               CGO_ENABLED=1 GOOS=android GOARCH="$arch" GOARM=7 \
                 CC="$toolchain/${triple}-clang" \
                 CXX="$toolchain/${triple}-clang++" \
+                CGO_LDFLAGS="-static-libstdc++" \
                 go build -o "$out" -trimpath -buildvcs=false -buildmode=pie \
                 -ldflags="-s -w -buildid= -checklinkname=0" . \
                 || { echo "could not build $abi"; exit 1; }
+
+              # Checked rather than trusted: every NEEDED entry has to be a library the platform
+              # actually provides. This is the check that would have caught the problem above on
+              # a runner instead of on a phone.
+              needed="$(readelf -d "$out" | sed -n 's/.*Shared library: \[\(.*\)\]/\1/p')"
+              echo "$abi needs: $(echo $needed)"
+              for lib in $needed; do
+                case "$lib" in
+                  libc.so|libm.so|libdl.so|liblog.so) ;;
+                  *) echo "$abi links $lib, which Android does not ship"; exit 1 ;;
+                esac
+              done
               # Read the ELF machine field, so a binary built for the wrong phone is
               # caught here instead of on someone's device.
               got="$(od -An -tx1 -j18 -N2 "$out" | tr -d ' \n')"
