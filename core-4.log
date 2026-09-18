@@ -1,0 +1,651 @@
+########## DEPS ##########
+=== pinning flashlight v7.6.241 ===
+go: downloading github.com/getlantern/flashlight/v7 v7.6.241
+go: downloading github.com/getlantern/detour v0.0.0-20230503144615-d3106a68f79e
+go: downloading github.com/getlantern/common v1.2.1-0.20230427204521-6ac18c21db39
+go: downloading github.com/getlantern/dnsgrab v0.0.0-20211216020425-5d5e155a01a8
+go: downloading github.com/getlantern/errors v1.0.4
+go: downloading github.com/getlantern/eventual/v2 v2.0.2
+go: downloading github.com/getlantern/golog v0.0.0-20230503153817-8e72de7e0a65
+go: downloading github.com/getlantern/netx v0.0.0-20240814210628-0984f52e2d18
+go: downloading github.com/jaffee/commandeer v0.6.0
+go: downloading github.com/mitchellh/mapstructure v1.5.0
+go: downloading github.com/getlantern/eventual v1.0.0
+go: downloading google.golang.org/protobuf v1.36.5
+go: downloading github.com/Jigsaw-Code/outline-sdk v0.0.19
+go: downloading github.com/OperatorFoundation/Replicant-go/Replicant/v3 v3.0.23
+go: downloading github.com/OperatorFoundation/Starbridge-go/Starbridge/v3 v3.0.17
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: downloading github.com/getlantern/broflake v0.0.0-20250515135912-b53a6690f363
+go: downloading github.com/getlantern/bufconn v0.0.0-20210901195825-fd7c0267b493
+go: downloading github.com/getlantern/cmux/v2 v2.0.0-20230301223233-dac79088a4c0
+go: downloading github.com/getlantern/cmux v0.0.0-20230301223233-dac79088a4c0
+go: downloading github.com/getlantern/cmuxprivate v0.0.0-20211216020409-d29d0d38be54
+go: downloading github.com/getlantern/ema v0.0.0-20190620044903-5943d28f40e4
+go: downloading github.com/getlantern/hellosplitter v0.1.1
+go: downloading github.com/getlantern/idletiming v0.0.0-20201229174729-33d04d220c4e
+go: downloading github.com/getlantern/kcpwrapper v0.0.0-20230327091313-c12d7c17c6de
+go: downloading github.com/getlantern/keyman v0.0.0-20230503155501-4e864ca2175b
+go: downloading github.com/getlantern/lantern-algeneva v0.0.0-20240930181006-6d3c00db1d5d
+go: downloading github.com/getlantern/lantern-water v0.0.0-20241218135103-60224336cf1d
+go: downloading github.com/getlantern/mtime v0.0.0-20200417132445-23682092d1f7
+go: downloading github.com/getlantern/multipath v0.0.0-20230510135141-717ed305ef50
+go: downloading github.com/getlantern/proxy/v3 v3.0.0-20240328103708-9185589b6a99
+go: downloading github.com/getlantern/psmux v1.5.15
+go: downloading github.com/getlantern/quicwrapper v0.0.0-20250417060014-acb01527c4c2
+go: downloading github.com/getlantern/sing-vmess v0.0.0-20241209111030-0f2c02b4eb9a
+go: downloading github.com/getlantern/tinywss v0.0.0-20211216020538-c10008a7d461
+go: downloading github.com/getlantern/tlsdialer/v3 v3.0.5
+go: downloading github.com/getlantern/tlsmasq v0.4.7-0.20230302000139-6e479a593298
+go: downloading github.com/getlantern/tlsresumption v0.0.0-20241210052744-a1c6aacc1d4d
+go: downloading github.com/getlantern/tlsutil v0.5.3
+go: downloading github.com/mitchellh/go-server-timing v1.0.1
+go: downloading github.com/refraction-networking/utls v1.7.1
+go: downloading github.com/refraction-networking/water v0.7.0-alpha
+go: downloading github.com/sagernet/sing v0.6.0-alpha.18
+go: downloading github.com/samber/lo v1.38.1
+go: downloading github.com/xtaci/smux v1.5.35-0.20250217141229-e6b0586a4539
+go: downloading github.com/getlantern/go-socks5 v0.0.0-20171114193258-79d4dd3e2db5
+go: downloading github.com/getlantern/hidden v0.0.0-20220104173330-f221c5a24770
+go: downloading github.com/getlantern/httpseverywhere v0.0.0-20201210200013-19ae11fc4eca
+go: downloading github.com/getlantern/iptool v0.0.0-20230112135223-c00e863b2696
+go: downloading github.com/getlantern/shortcut v0.0.0-20211026183428-bf59a137fdec
+go: downloading github.com/hashicorp/golang-lru v1.0.2
+go: downloading github.com/blang/semver v3.5.1+incompatible
+go: downloading github.com/getlantern/dnstt v0.0.0-20250530230749-4d64f4edcf0f
+go: downloading github.com/getlantern/fronted v0.0.0-20250613043431-4eb545c2da45
+go: downloading github.com/getlantern/kindling v0.0.0-20250625194722-aec3e1e74df1
+go: downloading github.com/getlantern/timezone v0.0.0-20210901200113-3f9de9d360c9
+go: downloading github.com/getlantern/rot13 v0.0.0-20220822172233-370767b2f782
+go: downloading github.com/getlantern/yaml v0.0.0-20190801163808-0c9bb1ebf426
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading github.com/Jigsaw-Code/outline-sdk/x v0.0.2
+go: downloading github.com/alextanhongpin/go-bandit v0.0.0-20191125130111-30de60d69bae
+go: downloading github.com/getlantern/domains v0.0.0-20220311111720-94f59a903271
+go: downloading github.com/getlantern/jibber_jabber v0.0.0-20210901195950-68955124cc42
+go: downloading github.com/getlantern/ops v0.0.0-20231025133620-f368ab734534
+go: downloading github.com/getlantern/osversion v0.0.0-20250424174400-d834340603cf
+go: downloading go.opentelemetry.io/otel v1.36.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.35.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.35.0
+go: downloading go.opentelemetry.io/otel/sdk v1.35.0
+go: downloading go.opentelemetry.io/otel/trace v1.36.0
+go: downloading github.com/getsentry/sentry-go v0.31.1
+go: downloading go.uber.org/atomic v1.10.0
+go: downloading github.com/getlantern/event v0.0.0-20210901195647-a7e3145142e6
+go: downloading github.com/getlantern/dns v0.0.0-20210120185712-8d005533efa0
+go: downloading github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c
+go: downloading go.uber.org/zap v1.26.0
+go: downloading github.com/getlantern/context v0.0.0-20220418194847-3d5e7a086201
+go: downloading github.com/go-stack/stack v1.8.1
+go: downloading github.com/shadowsocks/go-shadowsocks2 v0.1.5
+go: downloading golang.org/x/crypto v0.37.0
+go: downloading golang.org/x/net v0.39.0
+go: downloading github.com/OperatorFoundation/go-shadowsocks2 v1.2.6
+go: downloading github.com/aead/ecdh v0.2.0
+go: downloading github.com/OperatorFoundation/ghostwriter-go v1.0.6
+go: downloading github.com/getlantern/fdcount v0.0.0-20210503151800-5decd65b3731
+go: downloading github.com/stretchr/testify v1.10.0
+go: downloading github.com/mitchellh/go-ps v1.0.0
+go: downloading github.com/coder/websocket v1.8.12
+go: downloading github.com/google/uuid v1.6.0
+go: downloading github.com/pion/webrtc/v3 v3.3.4
+go: downloading github.com/quic-go/quic-go v0.50.1
+go: downloading github.com/getlantern/kcp-go/v5 v5.0.0-20220503142114-f0c1cd6e1b54
+go: downloading github.com/golang/snappy v0.0.4
+go: downloading github.com/getlantern/byteexec v0.0.0-20220903142956-e6ed20032cfd
+go: downloading github.com/getlantern/elevate v0.0.0-20220903142053-479ab992b264
+go: downloading github.com/getlantern/algeneva v0.0.0-20240222191137-2b4e88234f59
+go: downloading github.com/anacrolix/chansync v0.4.1-0.20240627045151-1aa1ac392fe8
+go: downloading github.com/anacrolix/torrent v1.53.3
+go: downloading go.uber.org/mock v0.5.0
+go: downloading github.com/getlantern/preconn v1.0.0
+go: downloading github.com/libp2p/go-buffer-pool v0.0.2
+go: downloading github.com/prometheus/client_golang v1.19.1
+go: downloading github.com/gofrs/uuid/v5 v5.3.0
+go: downloading github.com/pkg/errors v0.9.1
+go: downloading golang.org/x/sync v0.13.0
+go: downloading github.com/felixge/httpsnoop v1.0.4
+go: downloading github.com/golang/gddo v0.0.0-20190419222130-af0f2af80721
+go: downloading github.com/dvyukov/go-fuzz v0.0.0-20231019021653-5581da83c52f
+go: downloading github.com/andybalholm/brotli v1.0.6
+go: downloading github.com/cloudflare/circl v1.5.0
+go: downloading github.com/klauspost/compress v1.17.4
+go: downloading golang.org/x/sys v0.32.0
+go: downloading github.com/gaukas/wazerofs v0.1.0
+go: downloading golang.org/x/exp v0.0.0-20240823005443-9b4947da3948
+go: downloading github.com/refraction-networking/wazero v1.7.1-w
+go: downloading github.com/getlantern/hex v0.0.0-20220104173244-ad7e4b9194dc
+go: downloading github.com/xtaci/kcp-go/v5 v5.6.20
+go: downloading www.bamsoftware.com/git/dnstt.git v1.20241021.0
+go: downloading github.com/alitto/pond/v2 v2.1.5
+go: downloading github.com/getlantern/keepcurrent v0.0.0-20240126172110-2e0264ca385d
+go: downloading github.com/goccy/go-yaml v1.15.13
+go: downloading github.com/armon/go-radix v1.0.0
+go: downloading github.com/tkuchiki/go-timezone v0.2.0
+go: downloading github.com/getlantern/replica v0.14.4
+go: downloading github.com/go-logr/logr v1.4.2
+go: downloading go.opentelemetry.io/otel/metric v1.36.0
+go: downloading go.opentelemetry.io/proto/otlp v1.5.0
+go: downloading go.uber.org/multierr v1.11.0
+go: downloading github.com/davecgh/go-spew v1.1.1
+go: downloading github.com/pmezard/go-difflib v1.0.0
+go: downloading howett.net/plist v1.0.0
+go: downloading github.com/enobufs/go-nats v0.0.1
+go: downloading github.com/quic-go/webtransport-go v0.8.1-0.20241018022711-4ac2c9250e66
+go: downloading github.com/onsi/ginkgo/v2 v2.12.0
+go: downloading github.com/pion/datachannel v1.5.8
+go: downloading github.com/pion/dtls/v2 v2.2.12
+go: downloading github.com/pion/ice/v2 v2.3.36
+go: downloading github.com/pion/interceptor v0.1.29
+go: downloading github.com/pion/logging v0.2.2
+go: downloading github.com/pion/rtcp v1.2.14
+go: downloading github.com/pion/randutil v0.1.0
+go: downloading github.com/pion/rtp v1.8.7
+go: downloading github.com/pion/sctp v1.8.19
+go: downloading github.com/pion/sdp/v3 v3.0.9
+go: downloading github.com/pion/srtp/v2 v2.0.20
+go: downloading github.com/pion/stun v0.6.1
+go: downloading github.com/pion/transport/v2 v2.2.10
+go: downloading github.com/pion/transport v0.14.1
+go: downloading github.com/getlantern/filepersist v0.0.0-20210901195658-ed29a1cb0b7c
+go: downloading github.com/klauspost/reedsolomon v1.12.0
+go: downloading github.com/templexxx/xorsimd v0.4.3
+go: downloading github.com/tjfoc/gmsm v1.4.1
+go: downloading github.com/RoaringBitmap/roaring v1.2.3
+go: downloading github.com/anacrolix/dht/v2 v2.20.0
+go: downloading github.com/anacrolix/generics v0.0.3-0.20240902042256-7fb2702ef0ca
+go: downloading github.com/anacrolix/go-libutp v1.3.1
+go: downloading github.com/anacrolix/log v0.15.3-0.20240627045001-cd912c641d83
+go: downloading github.com/anacrolix/missinggo v1.3.0
+go: downloading github.com/anacrolix/missinggo/perf v1.0.0
+go: downloading github.com/anacrolix/missinggo/v2 v2.7.4
+go: downloading github.com/anacrolix/multiless v0.3.1-0.20221221005021-2d12701f83f7
+go: downloading github.com/anacrolix/sync v0.5.1
+go: downloading github.com/anacrolix/upnp v0.1.4
+go: downloading github.com/anacrolix/utp v0.1.0
+go: downloading github.com/bahlo/generic-list-go v0.2.0
+go: downloading github.com/google/btree v1.1.2
+go: downloading github.com/gorilla/websocket v1.5.3
+go: downloading golang.org/x/time v0.5.0
+go: downloading github.com/beorn7/perks v1.0.1
+go: downloading github.com/cespare/xxhash/v2 v2.3.0
+go: downloading github.com/prometheus/client_model v0.5.0
+go: downloading github.com/prometheus/common v0.48.0
+go: downloading github.com/prometheus/procfs v0.12.0
+go: downloading github.com/blang/vfs v1.0.0
+go: downloading github.com/flynn/noise v1.0.0
+go: downloading github.com/mholt/archiver/v3 v3.5.1
+go: downloading github.com/go-logr/stdr v1.2.2
+go: downloading go.opentelemetry.io/auto/sdk v1.1.0
+go: downloading google.golang.org/grpc v1.71.0
+go: downloading github.com/cenkalti/backoff/v4 v4.3.0
+go: downloading github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1
+go: downloading golang.org/x/text v0.24.0
+go: downloading github.com/quic-go/qpack v0.5.1
+go: downloading github.com/OperatorFoundation/go-bloom v1.0.1
+go: downloading github.com/pion/turn v1.3.7
+go: downloading golang.org/x/tools v0.24.0
+go: downloading golang.org/x/mod v0.20.0
+go: downloading github.com/pion/mdns v0.0.12
+go: downloading github.com/pion/turn/v2 v2.1.6
+go: downloading github.com/templexxx/cpu v0.1.1
+go: downloading github.com/klauspost/cpuid/v2 v2.2.6
+go: downloading github.com/bradfitz/iter v0.0.0-20191230175014-e8f45d346db8
+go: downloading github.com/rs/dnscache v0.0.0-20211102005908-e0241e321417
+go: downloading github.com/anacrolix/mmsg v1.0.0
+go: downloading github.com/huandu/xstrings v1.3.2
+go: downloading github.com/anacrolix/envpprof v1.3.0
+go: downloading github.com/edsrzf/mmap-go v1.1.0
+go: downloading github.com/ajwerner/btree v0.0.0-20211221152037-f427b3e689c0
+go: downloading github.com/tidwall/btree v1.6.0
+go: downloading github.com/go-llsqlite/adapter v0.0.0-20230927005056-7f5ce7f0c916
+go: downloading go.etcd.io/bbolt v1.3.7
+go: downloading github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5
+go: downloading github.com/klauspost/pgzip v1.2.5
+go: downloading github.com/nwaples/rardecode v1.1.2
+go: downloading github.com/pierrec/lz4/v4 v4.1.16
+go: downloading github.com/ulikunitz/xz v0.5.11
+go: downloading github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
+go: downloading google.golang.org/genproto/googleapis/api v0.0.0-20250218202821-56aae31c358a
+go: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a
+go: downloading github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572
+go: downloading github.com/anacrolix/confluence v1.15.0
+go: downloading github.com/getlantern/dhtup v0.0.0-20230218063409-258bc7570a27
+go: downloading github.com/getlantern/meta-scrubber v0.0.1
+go: downloading github.com/go-llsqlite/crawshaw v0.5.1
+go: downloading github.com/gorilla/mux v1.8.0
+go: downloading github.com/kennygrant/sanitize v1.2.4
+go: downloading github.com/wlynxg/anet v0.0.3
+go: downloading github.com/benbjohnson/immutable v0.4.1-0.20221220213129-8932b999621d
+go: downloading zombiezen.com/go/sqlite v0.13.1
+go: downloading github.com/google/pprof v0.0.0-20231101202521-4ca4178f5c7a
+go: downloading github.com/bits-and-blooms/bitset v1.3.0
+go: downloading github.com/mschoch/smat v0.2.0
+go: downloading github.com/anacrolix/squirrel v0.6.4
+go: downloading github.com/dsoprea/go-png-image-structure v0.0.0-20200615034826-4cfc78940228
+go: downloading github.com/anacrolix/stm v0.4.1-0.20221221005312-96d17df0e496
+go: downloading modernc.org/libc v1.22.3
+go: downloading modernc.org/sqlite v1.21.1
+go: downloading github.com/frankban/quicktest v1.14.6
+go: downloading github.com/dsoprea/go-exif/v2 v2.0.0-20200604193436-ca8584a0e1c4
+go: downloading github.com/dsoprea/go-logging v0.0.0-20200517223158-a10564966e9d
+go: downloading github.com/dsoprea/go-utility v0.0.0-20200512094054-1abbbc781176
+go: downloading github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46
+go: downloading github.com/google/go-cmp v0.7.0
+go: downloading github.com/kr/pretty v0.3.1
+go: downloading github.com/alecthomas/atomic v0.1.0-alpha2
+go: downloading github.com/golang/geo v0.0.0-20200319012246-673a6f80352d
+go: downloading gopkg.in/yaml.v2 v2.4.0
+go: downloading github.com/go-errors/errors v1.4.2
+go: downloading github.com/kr/text v0.2.0
+go: downloading github.com/rogpeppe/go-internal v1.13.1
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading modernc.org/mathutil v1.5.0
+go: downloading modernc.org/memory v1.5.0
+go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+=== go mod tidy ===
+go: downloading github.com/getlantern/mockconn v0.0.0-20200818071412-cb30d065a848
+go: downloading github.com/getlantern/uuid v1.2.0
+go: downloading github.com/getlantern/grtrack v0.0.0-20231025115619-bfbfadb228f3
+go: downloading github.com/getlantern/tlsdefaults v0.0.0-20171004213447-cf35cfd0b1b4
+go: downloading github.com/getlantern/waitforserver v1.0.1
+go: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
+go: downloading github.com/spf13/pflag v1.0.5
+go: downloading github.com/google/gopacket v1.1.19
+go: downloading github.com/kataras/golog v0.1.9
+go: downloading github.com/getlantern/nettest v1.0.0
+go: downloading github.com/onsi/ginkgo v1.16.5
+go: downloading github.com/onsi/gomega v1.27.10
+go: downloading github.com/pivotal-cf-experimental/jibber_jabber v0.0.0-20151120183258-bcc4c8345a21
+go: downloading go.uber.org/goleak v1.3.0
+go: downloading github.com/pingcap/errors v0.11.4
+go: downloading github.com/xtaci/lossyconn v0.0.0-20200209145036-adba10fffc37
+go: downloading github.com/stretchr/objx v0.5.2
+go: downloading github.com/miekg/dns v1.1.50
+go: downloading github.com/kataras/pio v0.0.12
+go: downloading github.com/riobard/go-bloom v0.0.0-20200614022211-cdc8013cb5b3
+go: downloading github.com/pion/transport/v3 v3.0.2
+go: downloading github.com/anacrolix/lsan v0.0.0-20211126052245-807000409a62
+go: downloading github.com/things-go/go-socks5 v0.0.5
+go: downloading github.com/francoispqt/gojay v1.2.13
+go: downloading filippo.io/edwards25519 v1.0.0
+go: downloading github.com/golang/protobuf v1.5.4
+go: downloading go.opentelemetry.io/otel/sdk/metric v1.35.0
+go: downloading github.com/alecthomas/assert/v2 v2.0.0-alpha3
+go: downloading github.com/alecthomas/repr v0.0.0-20210801044451-80ca428c5142
+go: downloading github.com/hexops/gotextdiff v1.0.3
+go: finding module for package github.com/nxadm/tail
+go: downloading github.com/nxadm/tail v1.4.11
+go: found github.com/nxadm/tail in github.com/nxadm/tail v1.4.11
+go: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
+go: downloading github.com/fsnotify/fsnotify v1.6.0
+=== resolved ===
+require github.com/getlantern/flashlight/v7 v7.6.241
+
+########## SMOKE ##########
+=== host build ===
+-rwxr-xr-x 1 runner runner 41207912 Sep 18 21:41 ../lanterncore-host
+
+=== starting it ===
+pid 8954
+ready after 5s: lantern core ready: SOCKS5 listening on 127.0.0.1:1821
+
+=== config dir after start ===
+total 412
+drwxr-xr-x 2 runner runner   4096 Sep 18 21:41 .
+drwxr-xr-x 5 runner runner   4096 Sep 18 21:41 ..
+-rw-r--r-- 1 runner runner 401886 Sep 18 21:41 global.yaml
+-rw-r--r-- 1 runner runner   4296 Sep 18 21:41 user.conf
+
+=== traffic by hostname (remote DNS) ===
+hostname OK after 10s
+fl=990f65
+h=www.cloudflare.com
+ip=132.145.69.116
+ts=1789767668.000
+visit_scheme=https
+uag=curl/8.5.0
+colo=LHR
+sliver=none
+
+=== traffic by IP literal - this is the shape the tunnel sends ===
+ip OK after 10s
+fl=1053f83
+h=1.1.1.1
+ip=132.145.69.116
+ts=1789767669.000
+visit_scheme=https
+uag=curl/8.5.0
+colo=LHR
+sliver=050-tier1
+
+=== config dir after traffic ===
+total 564
+drwxr-xr-x 2 runner runner   4096 Sep 18 21:41 .
+drwxr-xr-x 5 runner runner   4096 Sep 18 21:41 ..
+-rw-r--r-- 1 runner runner 153124 Sep 18 21:41 fronted_cache.json
+-rw-r--r-- 1 runner runner 401886 Sep 18 21:41 global.yaml
+-rw-r--r-- 1 runner runner   4296 Sep 18 21:41 user.conf
+byname=yes byip=yes
+
+########## CORE OUTPUT ##########
+248.e.akamai.net masquerade_ip=23.223.33.247 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: api.getiantem.org.), duration=18.753679ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: geo.getiantem.org.)
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.47.48.251 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: geo.getiantem.org.), duration=16.305965ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: config.getiantem.org.)
+DEBUG fronted: fronted.go:454 Could not dial to 23.193.184.22, x509: certificate signed by unknown authority [masquerade_domain=a248.e.akamai.net masquerade_ip=23.193.184.22 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:459 Not re-adding candidate that failed on error 'x509: certificate signed by unknown authority' [masquerade_domain=a248.e.akamai.net masquerade_ip=23.193.184.22 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.193.184.22 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:425 Dropping masquerade: non retryable error: x509: certificate signed by unknown authority
+DEBUG fronted: fronted.go:355 unexpected error vetting masquerades: x509: certificate signed by unknown authority
+DEBUG fronted: fronted.go:454 Could not dial to 23.49.104.47, x509: certificate signed by unknown authority [masquerade_domain=a248.e.akamai.net masquerade_ip=23.49.104.47 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:459 Not re-adding candidate that failed on error 'x509: certificate signed by unknown authority' [masquerade_domain=a248.e.akamai.net masquerade_ip=23.49.104.47 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.49.104.47 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:425 Dropping masquerade: non retryable error: x509: certificate signed by unknown authority
+DEBUG fronted: fronted.go:355 unexpected error vetting masquerades: x509: certificate signed by unknown authority
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: config.getiantem.org.), duration=20.550668ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: df.iantem.io.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: df.iantem.io.), duration=13.247204ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: raw.githubusercontent.com.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: raw.githubusercontent.com.), duration=12.204646ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: media.githubusercontent.com.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: media.githubusercontent.com.), duration=10.851346ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: objects.githubusercontent.com.)
+DEBUG fronted: fronted.go:454 Could not dial to 23.205.214.49, x509: certificate signed by unknown authority [masquerade_domain=a248.e.akamai.net masquerade_ip=23.205.214.49 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:459 Not re-adding candidate that failed on error 'x509: certificate signed by unknown authority' [masquerade_domain=a248.e.akamai.net masquerade_ip=23.205.214.49 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.205.214.49 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:425 Dropping masquerade: non retryable error: x509: certificate signed by unknown authority
+DEBUG fronted: fronted.go:355 unexpected error vetting masquerades: x509: certificate signed by unknown authority
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: objects.githubusercontent.com.), duration=10.037585ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: replica-r2.lantern.io.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: replica-r2.lantern.io.), duration=17.786738ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: replica-search.lantern.io.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: replica-search.lantern.io.), duration=21.235132ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: update.getlantern.org.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: update.getlantern.org.), duration=22.674074ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: globalconfig.flashlightproxy.com.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: globalconfig.flashlightproxy.com.), duration=21.869438ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: dogsdogs.xyz.)
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.32.238.21 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: dogsdogs.xyz.), duration=34.094286ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: '' (domain: service.dogsdogs.xyz.)
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: 'split:1' (domain: api.iantem.io.)
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.216.77.56 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: 'split:1' (domain: api.iantem.io.), duration=9.241347ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:195 🏃 running test: 'split:1' (domain: api.getiantem.org.)
+DEBUG flashlight.common: stream_dialer.go:211 🏁 success: '' (domain: service.dogsdogs.xyz.), duration=22.429314ms, status=ok ✅
+DEBUG flashlight.common: stream_dialer.go:365 🏆 selected TLS strategy '' in 0.27s
+
+DEBUG flashlight.common: logger.go:209 time=2026-09-18T21:41:04.393Z level=INFO source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:91 msg="Setting domain fronting"
+DEBUG flashlight.common: logger.go:209 time=2026-09-18T21:41:04.393Z level=INFO source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:104 msg="Setting DNS tunnel"
+DEBUG flashlight.config: fetcher.go:52 Will poll for config at https://globalconfig.flashlightproxy.com/global.yaml.gz
+DEBUG flashlight.services: bypass.go:76 Starting bypass service
+DEBUG flashlight.services: config.go:73 Starting config service
+DEBUG flashlight: flashlight.go:603 Starting client HTTP proxy
+DEBUG flashlight.client: client.go:265 About to listen at '127.0.0.1:18080'
+DEBUG flashlight.config: fetcher.go:77 Fetching cloud config from https://globalconfig.flashlightproxy.com/global.yaml.gz [op=fetch_global root_op=fetch_global]
+DEBUG flashlight: flashlight.go:591 Starting client SOCKS5 proxy
+DEBUG flashlight.common: headers.go:67 omitting timezone header because: unable to find timezone for UTC (0) [op=fetch_global root_op=fetch_global]
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.393Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/race_transport.go:55 msg="Dialing with 3 dialers" [op=fetch_global root_op=fetch_global]
+DEBUG flashlight.client: client.go:351 About to start SOCKS5 client proxy at 127.0.0.1:1821
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=globalconfig.flashlightproxy.com:443
+lantern core ready: SOCKS5 listening on 127.0.0.1:1821
+DEBUG flashlight.common: headers.go:67 omitting timezone header because: unable to find timezone for UTC (0) [op=Fetching_userconfig root_op=Fetching_userconfig]
+2026/09/18 21:41:04 INFO creating new session transport=DoH[https://cloudflare-dns.com/dns-query]
+DEBUG flashlight.client: headers.go:67 About to start HTTP client proxy at 127.0.0.1:18080
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=globalconfig.flashlightproxy.com:443
+DEBUG flashlight.services: config.go:182 configservice: fetching config from https://df.iantem.io/api/v1/config [op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=globalconfig.flashlightproxy.com:443
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/race_transport.go:55 msg="Dialing with 3 dialers" [op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=df.iantem.io:443
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=df.iantem.io:443
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:04.394Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/kindling.go:260 msg="Dialing with named dialer" name=0xce62a0 addr=df.iantem.io:443
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [masquerade_domain=a248.e.akamai.net masquerade_ip=23.216.77.154 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG flashlight.config: fetcher.go:125 Response headers from https://globalconfig.flashlightproxy.com/global.yaml.gz:
+HTTP/2.0 200 OK
+Content-Length: 107987
+Accept-Ranges: bytes
+Age: 76683
+Alt-Svc: h3=":443"; ma=86400
+Cache-Control: max-age=86401, must-revalidate
+Cf-Cache-Status: HIT
+Cf-Ray: a3d3833ecdf05d8f-EWR
+Content-Type: application/x-gzip
+Date: Fri, 18 Sep 2026 21:41:04 GMT
+Etag: "10572f2edab94b9c74859814b48a8427"
+Last-Modified: Fri, 18 Sep 2026 00:14:24 GMT
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1qLGYyfG3FlFbMVZy0VIhJ2ZJ8yta3dPR3uy8tHMs2AsUTjYSQOLcuiRxI1BeUhKDD1Z2Cvv96xvUpC61msIj5r0MEo9lz3MJPwpcrQMxcBKoWvkY2uyZtyAFVTRuEgAkETFjUcSwgXj3mDIeP7xMFG%2FEA%3D%3D"}]}
+Server: cloudflare
+X-Amz-Id-2: 1/ayDJZzoPPRG0uUCNU+6WawaYnRdWiUBDitLKGIQds7RnCciUqM3VdQcGCnmJvpfh0h+pqF9KP+tMbv0gGxwATTdsTRDDFf
+X-Amz-Replication-Status: COMPLETED
+X-Amz-Request-Id: XG2H5P58DS6RMPS2
+X-Amz-Server-Side-Encryption: AES256
+X-Amz-Version-Id: HeD0m_a_1WUwqI0liRikPRDDRlmWK_GF
+
+ [op=fetch_global root_op=fetch_global]
+DEBUG flashlight.config: fetcher.go:162 Fetched cloud config [config_changed=true op=fetch_global root_op=fetch_global]
+DEBUG flashlight.geolookup: geolookup.go:68 Country not available yet [config_changed=true op=fetch_global root_op=fetch_global]
+DEBUG flashlight.services: http.go:62 Response status: 200 OK headers:
+map[Access-Control-Allow-Credentials:[true] Access-Control-Allow-Headers:[Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Grpc-Web, connect-protocol-version, x-user-agent] Access-Control-Allow-Methods:[GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS] Access-Control-Allow-Origin:[] Alt-Svc:[h3=":443"; ma=2592000] Content-Length:[4296] Content-Type:[application/x-protobuf] Date:[Fri, 18 Sep 2026 21:41:04 GMT] Via:[1.1 google] X-Lantern-Origin:[1]] [op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG flashlight.services: types.pb.go:101 configservice: Received config [op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG userconfig: config.go:90 Setting user config [config_changed=true op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG userconfig: config.go:203 Notifying 2 config listeners [config_changed=true op=Fetching_userconfig root_op=Fetching_userconfig]
+DEBUG flashlight.geolookup: geolookup.go:33 Country or IP changed, US, 57.151.83.5. Notifying watchers
+DEBUG flashlight.services: service.go:46 configservice - next run in 2m41.721s
+DEBUG flashlight.shortcut: shortcut.go:89 Could not open all files open resources/us_ipv4.txt: file does not exist, open resources/us_ipv6.txt: file does not exist, open resources/us_ipv4_proxied.txt: file does not exist, open resources/us_ipv6_proxied.txt: file does not exist
+DEBUG flashlight.shortcut: shortcut.go:91 no shortcut list for country us, fallback to default
+DEBUG flashlight: flashlight.go:283 Setting detour country to US
+DEBUG flashlight.shortcut: shortcut.go:58 Configuring for country default
+DEBUG flashlight: types.pb.go:919 Received new proxy configs
+DEBUG shortcut: shortcut.go:62 Creating shortcut with direct 5 ipv4 subnets and 3 ipv6 subnets and proxied 0 ipv4 subnets and 0 ipv6 subnets
+DEBUG flashlight.shortcut: shortcut.go:98 loaded shortcut list for country default
+DEBUG flashlight: flashlight.go:267 Applying proxy config with proxies
+DEBUG chained: proxy.go:96 Creating map for 3 individual chained servers
+DEBUG flashlight.client: client.go:366 Configure() called
+DEBUG flashlight.client: client.go:729 initDialers called
+DEBUG chained: tls_file_cache.go:102 Will persist client session states at /home/runner/work/lantern-probe/lantern-probe/lconf/tls_session_states
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: proxy.go:96 Creating map for 3 individual chained servers
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: multiplexed_impl.go:28 Enabling multiplexing for jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921 at     130.61.117.57:443 (t)
+DEBUG chained: simbrowser.go:80 Enabling multiplexing for jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c at    132.145.69.116:443 (t)
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG chained: tls_config.go:40 Using serialized client session state
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: multiplexed_impl.go:28 Enabling multiplexing for jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908 at     84.235.172.55:443 (t)
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG chained: tls_config.go:142 failed to actively obtain browser hello: Could not read hello cache file: open /home/runner/work/lantern-probe/lantern-probe/lconf/hello-cache.active-capture: no such file or directory [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG flashlight.services: bypass.go:211 Starting bypass for proxy jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG chained: multiplexed_impl.go:28 Enabling multiplexing for jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG chained: multiplexed_impl.go:28 Enabling multiplexing for jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice [op=get_browser_hello platform=linux root_op=get_browser_hello]
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908 at     84.235.172.55:443 (t)
+DEBUG flashlight.services: bypass.go:211 Starting bypass for proxy jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c at    132.145.69.116:443 (t)
+DEBUG flashlight.services: bypass.go:211 Starting bypass for proxy jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921
+DEBUG simbrowser: simbrowser.go:80 failed to mimic default browser: unsupported platform; falling back to weighted choice
+DEBUG chained: multiplexed_impl.go:28 Enabling multiplexing for jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921
+DEBUG chained: proxy.go:110 Adding chained server: jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921 at     130.61.117.57:443 (t)
+DEBUG dialer: proxyless.go:167 OnOptions called on proxylessDialer with 3 dialers
+DEBUG flashlight.client: client.go:731 initDialers took 1.074835ms
+DEBUG flashlight.client: client.go:372 Reset dialer
+DEBUG flashlight: flashlight.go:269 Got 3 dialers from fetched
+DEBUG flashlight: flashlight.go:143 [Startup] onProxiesUpdate called from fetched
+DEBUG dialer: fastconnect.go:144 Dialing all dialers in parallel []dialer.ProxyDialer{(*chained.proxy)(0xc0081cde00), (*chained.proxy)(0xc008060dc0), (*chained.proxy)(0xc0081f6000)}
+DEBUG dialer: fastconnect.go:170 Connecting to all dialers
+DEBUG flashlight.config.global.yaml.fetcher.http: config.go:376 Fetched config!
+DEBUG flashlight.config.global.yaml.fetcher.http: config.go:380 Sent to save chan
+DEBUG flashlight.config: config.go:419 Wrote file at /home/runner/work/lantern-probe/lantern-probe/lconf/global.yaml [op=save_config root_op=save_config]
+DEBUG flashlight.config: config.go:181 Dispatching updated config from fetched
+DEBUG flashlight: flashlight.go:535 Applying global config
+DEBUG flashlight: flashlight.go:390 Got global config from fetched
+DEBUG flashlight.domainrouting: domainrouting.go:70 Configuring with 77 rules and 7312 proxied sites
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for namasha.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for xvideos-cdn.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for retracker.bashtel.ru
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for 1688.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for varzesh3.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for goload.wecloud.io
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for sina.com.cn
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for bilibili.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for tejaratnews.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for hwcdn.net
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for ir
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for 56.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for tmall.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for yy.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for donya-e-eqtesad.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for huya.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for aupl.download.windowsupdate.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for douyucdn2.cn
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for jd.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for telewebion.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for foodanddrink.tile.appex.bing.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for pay.freekassa.ru
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for csdn.net
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for api.maccms.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for td-service.appcloudbox.net
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for s3.ir-thr-at1.arvanstorage.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for filimo.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for wechat.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for officecdn-microsoft-com.akamaized.net
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for sqm.msn.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for vk.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for cdn-apple.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for xinhuanet.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for status-log.vskit.tv
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for tj.colymas.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for taobao.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for ir.ss7hc6jm.io
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for uxip.meizu.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for xnxx-cdn.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for baidu.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for router.asus.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for videodown.baofeng.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for 17ok.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for zhanqi.tv
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for digikala.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for tianya.cn
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for weibo.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for 360.cn
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for panda.tv
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for aparat.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for sp.yostore.net
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for sohu.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for 92.223.103.136
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for apple.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for microsoft.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for 115.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for s-dt2.cloud.gcore.lu
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for so.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for yandex.net
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for namnak.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for update.bloxy.cn
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for huanqiu.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for phncdn.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for yandex.ru
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for rokna.net
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for yandexmetrica.com
+DEBUG flashlight.domainrouting: domainrouting.go:169 Will always force direct traffic for donorbox.org
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for api.launcher.cocos.com
+DEBUG flashlight.domainrouting: domainrouting.go:166 Will force direct traffic for qq.com
+DEBUG otel: otel.go:52 Configuring OpenTelemetry with sample rate 8000 and op sample rates map[autoupdate_download:1 autoupdate_install:1 broflake_fronted_roundtrip:800000 check_update:1 client_started:1 client_stopped:1 new_broflake:1000 proxy_rank:24000 replica_metrics:10000 replica_torrent_peer_sent_data:16 report_issue:1]
+DEBUG otel: otel.go:53 Connecting to endpoint ingest.us.signoz.cloud:443
+DEBUG otel: otel.go:54 Using headers map[signoz-ingestion-key:oYRsGfPwBwtIteu4vi84DzSDKnxtStlEw7Bv]
+DEBUG otel: otel.go:77 Will report traces to OpenTelemetry
+DEBUG flashlight: flashlight.go:137 [Startup] client config updated
+DEBUG flashlight: flashlight.go:140 [Startup] onInit called
+DEBUG dialer: fastconnect.go:193 Dialer jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c succeeded in 165.201187ms
+DEBUG dialer: fastconnect.go:124 Connected to jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG dialer: fastconnect.go:131 Setting new top dialer to jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG flashlight: flashlight.go:149 [Startup] onSucceedingProxy called
+DEBUG dialer: fastconnect.go:178 fastConnectDialer::parallelDial::canceling context for jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c
+DEBUG dialer: fastconnect.go:193 Dialer jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908 succeeded in 171.344756ms
+DEBUG dialer: fastconnect.go:124 Connected to jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908
+DEBUG flashlight: flashlight.go:149 [Startup] onSucceedingProxy called
+DEBUG dialer: fastconnect.go:178 fastConnectDialer::parallelDial::canceling context for jigglypuff-vps-90f21470-49b9-4b0e-a97f-d6557dbdc908
+DEBUG dialer: fastconnect.go:193 Dialer jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921 succeeded in 187.265854ms
+DEBUG dialer: fastconnect.go:124 Connected to jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921
+DEBUG flashlight: flashlight.go:149 [Startup] onSucceedingProxy called
+DEBUG dialer: fastconnect.go:178 fastConnectDialer::parallelDial::canceling context for jigglypuff-vps-21d4ae49-808c-4ed4-ab96-fc4afb60e921
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:05.110Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/race_transport.go:113 msg="Context canceled before sending request" host=globalconfig.flashlightproxy.com
+DEBUG flashlight.common: logger.go:199 time=2026-09-18T21:41:05.110Z level=DEBUG source=github.com/getlantern/kindling@v0.0.0-20250625194722-aec3e1e74df1/race_transport.go:113 msg="Context canceled before sending request" host=df.iantem.io
+DEBUG dialer: bandit.go:50 Creating bandit with 3 dialers
+ERROR dialer: bandit.go:64 unable to load bandit weights: open /home/runner/work/lantern-probe/lantern-probe/lconf/bandit/rewards.csv: no such file or directory [error=unable to load bandit weights: %v error_location=github.com/getlantern/flashlight/v7/dialer.NewBandit (bandit.go:64) error_op=open error_text=unable to load bandit weights: open /home/runner/work/lantern-probe/lantern-probe/lconf/bandit/rewards.csv: no such file or directory error_type=errors.Error]
+ERROR dialer: bandit.go:64   at github.com/getlantern/flashlight/v7/dialer.NewBandit (bandit.go:64)
+ERROR dialer: bandit.go:64   at github.com/getlantern/flashlight/v7/dialer.newFastConnectDialer.func3 (fastconnect.go:53)
+ERROR dialer: bandit.go:64   at github.com/getlantern/flashlight/v7/dialer.(*fastConnectDialer).connectAll (fastconnect.go:166)
+ERROR dialer: bandit.go:64   at runtime.goexit (asm_amd64.s:1700)
+ERROR dialer: bandit.go:64 Caused by: open /home/runner/work/lantern-probe/lantern-probe/lconf/bandit/rewards.csv: no such file or directory
+ERROR dialer: bandit.go:64 Caused by: no such file or directory
+DEBUG dialer: fastconnect.go:58 Switching to bandit dialer
+DEBUG flashlight: flashlight.go:491 Checking blocking related feature proxywhitelistedonly with country set to US [local_proxy_type=http op=proxied_dialer origin_port=443 root_op=proxy]
+DEBUG dialer: parallel_dialer.go:38 Proxyless dialer failed for 104.16.123.96:443, falling back to default dialer [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:101 bandit::DialContext::time remaining: 19.999903949s [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:113 bandit::dialer 0: jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c (132.145.69.116:443) at 132.145.69.116:443 [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG chained: dialer.go:136 Dialing origin address 104.16.123.96:443 for proxy jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c (132.145.69.116:443) [dc=vps dial_type=connect force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=dial_for_balancer origin_port=443 proxy_host=132.145.69.116 proxy_multiplexed=true proxy_name=jigglypuff-vps-db19f225-cba6 proxy_network=tcp proxy_port=443 proxy_protocol=https proxy_type=chained remotely_proxied=true root_op=proxy]
+DEBUG fronted: cache.go:82 Updating cache at /home/runner/work/lantern-probe/lantern-probe/lconf/fronted_cache.json
+DEBUG fronted: cache.go:107 Cache saved to disk
+DEBUG flashlight.common: headers.go:67 omitting timezone header because: unable to find timezone for UTC (0) [dc=vps dial_type=connect force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=dial_for_balancer origin_port=443 proxy_host=132.145.69.116 proxy_multiplexed=true proxy_name=jigglypuff-vps-db19f225-cba6 proxy_network=tcp proxy_port=443 proxy_protocol=https proxy_type=chained remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:136 Dialer jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c dialed in 0.247872877 seconds [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight: flashlight.go:149 [Startup] onSucceedingProxy called [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:474 Dialing via the proxy takes 248.066503ms for 104.16.123.96:443 [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:432 Canceling dial context for 104.16.123.96:443: <nil> [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:419 Canceling dnsResolutionMapEventual context for 104.16.123.96:443: <nil> [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight: flashlight.go:491 Checking blocking related feature proxywhitelistedonly with country set to US [local_proxy_type=http op=proxied_dialer origin_port=443 root_op=proxy]
+DEBUG dialer: parallel_dialer.go:38 Proxyless dialer failed for 1.1.1.1:443, falling back to default dialer [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:101 bandit::DialContext::time remaining: 19.999903788s [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:113 bandit::dialer 0: jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c (132.145.69.116:443) at 132.145.69.116:443 [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG chained: dialer.go:136 Dialing origin address 1.1.1.1:443 for proxy jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c (132.145.69.116:443) [dc=vps dial_type=connect force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=dial_for_balancer origin_port=443 proxy_host=132.145.69.116 proxy_multiplexed=true proxy_name=jigglypuff-vps-db19f225-cba6 proxy_network=tcp proxy_port=443 proxy_protocol=https proxy_type=chained remotely_proxied=true root_op=proxy]
+DEBUG flashlight.common: headers.go:67 omitting timezone header because: unable to find timezone for UTC (0) [dc=vps dial_type=connect force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=dial_for_balancer origin_port=443 proxy_host=132.145.69.116 proxy_multiplexed=true proxy_name=jigglypuff-vps-db19f225-cba6 proxy_network=tcp proxy_port=443 proxy_protocol=https proxy_type=chained remotely_proxied=true root_op=proxy]
+DEBUG dialer: bandit.go:136 Dialer jigglypuff-vps-db19f225-cba6-4964-accd-1413329b219c dialed in 0.082774797 seconds [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight: flashlight.go:149 [Startup] onSucceedingProxy called [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:474 Dialing via the proxy takes 82.980961ms for 1.1.1.1:443 [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:432 Canceling dial context for 1.1.1.1:443: <nil> [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG flashlight.client: client.go:419 Canceling dnsResolutionMapEventual context for 1.1.1.1:443: <nil> [force_proxied=true force_proxied_reason=proxyall local_proxy_type=http op=proxied_dialer origin_port=443 remotely_proxied=true root_op=proxy]
+DEBUG fronted: fronted.go:454 Could not dial to 72.247.127.137, dial tcp 72.247.127.137:443: i/o timeout [masquerade_domain=a248.e.akamai.net masquerade_ip=72.247.127.137 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:462 Unexpected error dialing, keeping masquerade: dial tcp 72.247.127.137:443: i/o timeout [masquerade_domain=a248.e.akamai.net masquerade_ip=72.247.127.137 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:355 unexpected error vetting masquerades: dial tcp 72.247.127.137:443: i/o timeout
+DEBUG fronted: fronted.go:454 Could not dial to 72.247.127.161, dial tcp 72.247.127.161:443: i/o timeout [masquerade_domain=a248.e.akamai.net masquerade_ip=72.247.127.161 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:462 Unexpected error dialing, keeping masquerade: dial tcp 72.247.127.161:443: i/o timeout [masquerade_domain=a248.e.akamai.net masquerade_ip=72.247.127.161 masquerade_provider=akamai op=dial_masquerade root_op=dial_masquerade]
+DEBUG fronted: fronted.go:355 unexpected error vetting masquerades: dial tcp 72.247.127.161:443: i/o timeout
+DEBUG fronted: fronted.go:296 findWorkingFronts::Tried all fronts
+
+########## CROSS ##########
+toolchain: /usr/local/lib/android/sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin
+arm64-v8a needs: liblog.so libdl.so libm.so libc.so
+arm64-v8a: built for , 43209152 bytes, ELF machine b700
+armeabi-v7a needs: liblog.so libdl.so libm.so libc.so
+armeabi-v7a: built for , 39249176 bytes, ELF machine 2800
+x86_64 needs: liblog.so libdl.so libm.so libc.so
+x86_64: built for , 46106328 bytes, ELF machine 3e00
+41de4238137e853adaf131501e541a3b11bd7bf02975d9f0f2a7f6816b6a55d4  liblantern-arm64-v8a.so
+eaaba04fa0233867eded65c4cbd3e2d32abeb0aa0b97890233f5f7f116edcc95  liblantern-armeabi-v7a.so
+52e903062fedb57a8ccf1b6813c96aa69ab40beeff9ff133be12edd974d7d18f  liblantern-x86_64.so
+
+########## PUBLISH ##########
++ gh release delete core-latest --repo Amirmahdavi2022/lantern-probe --yes --cleanup-tag
++ gh release create core-latest out/liblantern-arm64-v8a.so out/liblantern-armeabi-v7a.so out/liblantern-x86_64.so out/SHA256SUMS --repo Amirmahdavi2022/lantern-probe --title 'lantern core (standalone SOCKS5)' --notes 'flashlight built as a plain executable with a SOCKS5 listener. Smoke test on the runner: success.'
+https://github.com/Amirmahdavi2022/lantern-probe/releases/tag/core-latest
