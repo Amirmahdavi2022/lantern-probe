@@ -330,11 +330,18 @@ jobs:
               # buildmode=pie is already the default for GOOS=android and is named here
               # because Android refuses to execute a non-PIE binary and a silent default
               # is a poor thing to depend on.
+              # -checklinkname=0 is required and is not a workaround for our own code:
+              # github.com/wlynxg/anet, which flashlight pulls in ONLY on android, reaches into
+              # the standard library with //go:linkname to read net.zoneCache - that is how it
+              # gets around Android blocking the netlink calls Go's own resolver uses. Go 1.23
+              # started rejecting linknames to unexported std symbols, so without this flag the
+              # link step fails with "invalid reference to net.zoneCache". It is also why the
+              # host build passed while this one did not: anet is not in a linux build at all.
               CGO_ENABLED=1 GOOS=android GOARCH="$arch" GOARM=7 \
                 CC="$toolchain/${triple}-clang" \
                 CXX="$toolchain/${triple}-clang++" \
                 go build -o "$out" -trimpath -buildvcs=false -buildmode=pie \
-                -ldflags="-s -w -buildid=" . \
+                -ldflags="-s -w -buildid= -checklinkname=0" . \
                 || { echo "could not build $abi"; exit 1; }
               # Read the ELF machine field, so a binary built for the wrong phone is
               # caught here instead of on someone's device.
