@@ -1,0 +1,546 @@
+name: probe apk
+
+# Builds the Lantern probe APK. The whole Android project lives inside this
+# file so the repo can be updated with a single commit from a phone.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/probe.yml' ]
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          path: host
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Write the probe project
+        run: |
+          set -eu
+
+          mkdir -p proj/app/src/main/java/net/probe/lanterncheck
+          mkdir -p proj/app/libs
+
+          cat > proj/settings.gradle <<'PROBE_EOF_0'
+          pluginManagement {
+              repositories {
+                  google()
+                  mavenCentral()
+                  gradlePluginPortal()
+              }
+          }
+
+          dependencyResolutionManagement {
+              repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+              repositories {
+                  google()
+                  mavenCentral()
+              }
+          }
+
+          rootProject.name = 'lanterncheck'
+          include ':app'
+          PROBE_EOF_0
+
+          cat > proj/gradle.properties <<'PROBE_EOF_1'
+          org.gradle.jvmargs=-Xmx4g -Dfile.encoding=UTF-8
+          org.gradle.parallel=true
+          android.useAndroidX=true
+          android.nonTransitiveRClass=true
+          PROBE_EOF_1
+
+          cat > proj/app/build.gradle <<'PROBE_EOF_2'
+          plugins {
+              id 'com.android.application' version '8.5.2'
+          }
+
+          android {
+              namespace 'net.probe.lanterncheck'
+              compileSdk 34
+
+              defaultConfig {
+                  applicationId 'net.probe.lanterncheck'
+                  minSdk 23
+                  targetSdk 34
+                  versionCode 1
+                  versionName '1.0'
+              }
+
+              // libgojni.so is ~40 MB per ABI. Ship one APK per ABI instead of a 160 MB
+              // universal one - arm64-v8a is the one to install on any recent phone.
+              splits {
+                  abi {
+                      enable true
+                      reset()
+                      include 'arm64-v8a', 'armeabi-v7a'
+                      universalApk false
+                  }
+              }
+
+              buildTypes {
+                  debug {
+                      minifyEnabled false
+                  }
+              }
+
+              compileOptions {
+                  sourceCompatibility JavaVersion.VERSION_1_8
+                  targetCompatibility JavaVersion.VERSION_1_8
+              }
+
+              lint {
+                  abortOnError false
+                  checkReleaseBuilds false
+              }
+          }
+
+          dependencies {
+              implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+              // Not optional. LanternManager.startLantern() calls ProxyHelper.setProxy(),
+              // which builds an OkHttpClient, and the AAR carries no dependency metadata,
+              // so without these the SDK dies with NoClassDefFoundError the moment the
+              // tunnel comes up - which reads like "Lantern failed" but is not.
+              implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+              implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.24'
+              implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+              // The AAR ships a stray DataBinderMapperImpl whose superclass lives here.
+              // Nothing calls it, but D8 wants the hierarchy to resolve.
+              implementation 'androidx.databinding:databinding-runtime:8.5.2'
+          }
+          PROBE_EOF_2
+
+          cat > proj/app/src/main/AndroidManifest.xml <<'PROBE_EOF_3'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+              <uses-permission android:name="android.permission.INTERNET" />
+              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+              <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+              <application
+                  android:allowBackup="false"
+                  android:label="Lantern probe"
+                  android:usesCleartextTraffic="true">
+
+                  <activity
+                      android:name=".MainActivity"
+                      android:exported="true"
+                      android:label="Lantern probe">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
+
+              </application>
+
+          </manifest>
+          PROBE_EOF_3
+
+          cat > proj/app/src/main/java/net/probe/lanterncheck/MainActivity.java <<'PROBE_EOF_4'
+          package net.probe.lanterncheck;
+
+          import android.app.Activity;
+          import android.graphics.Color;
+          import android.os.Bundle;
+          import android.os.Handler;
+          import android.os.Looper;
+          import android.util.TypedValue;
+          import android.view.Gravity;
+          import android.view.ViewGroup;
+          import android.widget.Button;
+          import android.widget.LinearLayout;
+          import android.widget.ScrollView;
+          import android.widget.TextView;
+
+          import java.io.BufferedReader;
+          import java.io.InputStream;
+          import java.io.InputStreamReader;
+          import java.net.HttpURLConnection;
+          import java.net.InetSocketAddress;
+          import java.net.Proxy;
+          import java.net.URL;
+
+          import io.lantern.sdk.LanternManager;
+
+          /**
+           * One-screen probe. Answers a single question: does the flashlight core inside
+           * lanternsdk-android still reach the live Lantern network, and where does it exit?
+           *
+           * Every request through the proxy uses an explicit Proxy object rather than the
+           * default ProxySelector, because startLantern() installs a process-wide
+           * ProxySelector of its own and that would make "direct" and "proxied" results
+           * impossible to tell apart.
+           */
+          public class MainActivity extends Activity {
+
+              private static final String[] TARGETS = {
+                  "https://www.cloudflare.com/cdn-cgi/trace",
+                  "https://chatgpt.com/cdn-cgi/trace",
+                  "https://www.youtube.com/generate_204",
+                  "https://www.google.com/generate_204",
+              };
+
+              private static final String LISTEN_ADDR = "127.0.0.1:0";
+              private static final boolean PROXY_ALL = true;
+
+              private TextView out;
+              private Button run;
+              private ScrollView scroller;
+              private final Handler ui = new Handler(Looper.getMainLooper());
+              private volatile boolean busy = false;
+
+              @Override
+              protected void onCreate(Bundle state) {
+                  super.onCreate(state);
+
+                  LinearLayout root = new LinearLayout(this);
+                  root.setOrientation(LinearLayout.VERTICAL);
+                  root.setBackgroundColor(Color.parseColor("#0d1117"));
+                  int pad = dp(12);
+                  root.setPadding(pad, pad, pad, pad);
+
+                  run = new Button(this);
+                  run.setText("Run test");
+                  root.addView(run, new LinearLayout.LayoutParams(
+                          ViewGroup.LayoutParams.MATCH_PARENT,
+                          ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                  out = new TextView(this);
+                  out.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f);
+                  out.setTextColor(Color.parseColor("#c9d1d9"));
+                  out.setTextIsSelectable(true);
+                  out.setGravity(Gravity.TOP);
+
+                  scroller = new ScrollView(this);
+                  scroller.addView(out, new ViewGroup.LayoutParams(
+                          ViewGroup.LayoutParams.MATCH_PARENT,
+                          ViewGroup.LayoutParams.WRAP_CONTENT));
+                  root.addView(scroller, new LinearLayout.LayoutParams(
+                          ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
+
+                  setContentView(root);
+
+                  run.setOnClickListener(new android.view.View.OnClickListener() {
+                      @Override
+                      public void onClick(android.view.View v) {
+                          if (busy) return;
+                          busy = true;
+                          run.setEnabled(false);
+                          out.setText("");
+                          new Thread(new Runnable() {
+                              @Override
+                              public void run() {
+                                  try {
+                                      probe();
+                                  } catch (Throwable t) {
+                                      log("UNCAUGHT " + t);
+                                      log(stack(t));
+                                  } finally {
+                                      ui.post(new Runnable() {
+                                          @Override
+                                          public void run() {
+                                              busy = false;
+                                              run.setEnabled(true);
+                                          }
+                                      });
+                                  }
+                              }
+                          }, "probe").start();
+                      }
+                  });
+
+                  log("Lantern probe");
+                  log("abi        " + android.os.Build.SUPPORTED_ABIS[0]);
+                  log("android    " + android.os.Build.VERSION.RELEASE + " (sdk " + android.os.Build.VERSION.SDK_INT + ")");
+                  log("listen     " + LISTEN_ADDR + "  proxyAll=" + PROXY_ALL);
+                  log("");
+                  log("Press Run test.");
+              }
+
+              private void probe() {
+                  // ---- phase 1: direct, before Lantern touches the ProxySelector ----
+                  section("1. direct (no proxy)");
+                  for (String t : TARGETS) {
+                      fetch(t, Proxy.NO_PROXY);
+                  }
+
+                  // ---- phase 2: bring Lantern up ----
+                  section("2. starting lantern");
+                  long t0 = System.currentTimeMillis();
+                  try {
+                      LanternManager.INSTANCE.setup(this, "PantherProbe", null);
+                      log("setup ok");
+                  } catch (Throwable t) {
+                      log("setup FAILED " + t);
+                      log(stack(t));
+                      return;
+                  }
+
+                  InetSocketAddress addr = null;
+                  try {
+                      addr = LanternManager.INSTANCE.startLantern(LISTEN_ADDR, PROXY_ALL);
+                  } catch (Throwable t) {
+                      log("startLantern threw " + t);
+                      log(stack(t));
+                  }
+                  log("startLantern returned " + addr + "  after " + (System.currentTimeMillis() - t0) + " ms");
+
+                  // Start() gives flashlight only 5 s to bind before it returns an error,
+                  // and a cold config fetch can take longer than that. A null here is not
+                  // a verdict, so keep asking for the port instead of giving up.
+                  if (addr == null) {
+                      log("null return - flashlight had not bound within its 5s window, polling getProxyPort()");
+                      for (int i = 0; i < 45; i++) {
+                          sleep(2000);
+                          int port = 0;
+                          try {
+                              port = LanternManager.INSTANCE.getProxyPort();
+                          } catch (Throwable t) {
+                              // "client is not fully initialized" until the callback fires
+                          }
+                          if (port > 0) {
+                              addr = new InetSocketAddress("127.0.0.1", port);
+                              log("port appeared after " + (System.currentTimeMillis() - t0) + " ms -> " + port);
+                              break;
+                          }
+                          if (i % 5 == 4) log("  still waiting, " + ((i + 1) * 2) + "s");
+                      }
+                  }
+
+                  if (addr == null) {
+                      log("");
+                      log("VERDICT: the proxy never came up. The bundled flashlight core did not");
+                      log("start at all, so there is nothing to bridge into Panther.");
+                      return;
+                  }
+
+                  boolean running = false;
+                  try { running = LanternManager.INSTANCE.isRunning(); } catch (Throwable ignored) { }
+                  int port = -1;
+                  try { port = LanternManager.INSTANCE.getProxyPort(); } catch (Throwable t) { log("getProxyPort " + t); }
+                  log("isRunning=" + running + "  getProxyPort=" + port + "  addr=" + addr);
+
+                  // ---- phase 3: through the proxy ----
+                  section("3. through lantern");
+                  Proxy p = new Proxy(Proxy.Type.HTTP, addr);
+                  int ok = 0;
+                  for (String t : TARGETS) {
+                      if (fetch(t, p)) ok++;
+                  }
+
+                  section("verdict");
+                  if (ok == 0) {
+                      log("The proxy is listening but not a single request came back through it.");
+                      log("The old pinned core is not reaching the Lantern network.");
+                  } else if (ok < TARGETS.length) {
+                      log(ok + " of " + TARGETS.length + " targets answered through the proxy.");
+                      log("Partly alive. Check the loc= line above for the exit country.");
+                  } else {
+                      log("All " + TARGETS.length + " targets answered through the proxy.");
+                      log("The core is alive. Check loc= above - if it is not IR, traffic is really leaving.");
+                  }
+
+                  try {
+                      LanternManager.INSTANCE.stopLantern();
+                      log("");
+                      log("stopped.");
+                  } catch (Throwable t) {
+                      log("stopLantern " + t);
+                  }
+              }
+
+              /** Returns true when the request produced a real HTTP status code. */
+              private boolean fetch(String url, Proxy proxy) {
+                  long t0 = System.currentTimeMillis();
+                  HttpURLConnection c = null;
+                  try {
+                      c = (HttpURLConnection) new URL(url).openConnection(proxy);
+                      c.setConnectTimeout(15000);
+                      c.setReadTimeout(15000);
+                      c.setInstanceFollowRedirects(false);
+                      c.setRequestProperty("User-Agent", "Mozilla/5.0 (Android)");
+                      int code = c.getResponseCode();
+                      long ms = System.currentTimeMillis() - t0;
+                      log(pad(shortName(url)) + " " + code + "  " + ms + " ms");
+
+                      if (url.endsWith("/cdn-cgi/trace") && code == 200) {
+                          InputStream in = c.getInputStream();
+                          BufferedReader r = new BufferedReader(new InputStreamReader(in));
+                          String line;
+                          while ((line = r.readLine()) != null) {
+                              if (line.startsWith("ip=") || line.startsWith("loc=")
+                                      || line.startsWith("colo=") || line.startsWith("warp=")) {
+                                  log("    " + line);
+                              }
+                          }
+                          r.close();
+                      }
+                      return true;
+                  } catch (Throwable t) {
+                      long ms = System.currentTimeMillis() - t0;
+                      log(pad(shortName(url)) + " FAIL  " + ms + " ms  " + t.getClass().getSimpleName()
+                              + ": " + t.getMessage());
+                      return false;
+                  } finally {
+                      if (c != null) c.disconnect();
+                  }
+              }
+
+              private static String shortName(String url) {
+                  try {
+                      URL u = new URL(url);
+                      String h = u.getHost();
+                      if (h.startsWith("www.")) h = h.substring(4);
+                      return h;
+                  } catch (Throwable t) {
+                      return url;
+                  }
+              }
+
+              private static String pad(String s) {
+                  StringBuilder b = new StringBuilder(s);
+                  while (b.length() < 16) b.append(' ');
+                  return b.toString();
+              }
+
+              private static String stack(Throwable t) {
+                  StringBuilder b = new StringBuilder();
+                  StackTraceElement[] es = t.getStackTrace();
+                  for (int i = 0; i < es.length && i < 8; i++) {
+                      b.append("    at ").append(es[i].toString()).append('\n');
+                  }
+                  Throwable cause = t.getCause();
+                  if (cause != null) b.append("  caused by ").append(cause.toString()).append('\n');
+                  return b.toString();
+              }
+
+              private static void sleep(long ms) {
+                  try {
+                      Thread.sleep(ms);
+                  } catch (InterruptedException e) {
+                      Thread.currentThread().interrupt();
+                  }
+              }
+
+              private void section(String title) {
+                  log("");
+                  log("--- " + title + " ---");
+              }
+
+              private void log(final String line) {
+                  ui.post(new Runnable() {
+                      @Override
+                      public void run() {
+                          out.append(line + "\n");
+                          scroller.post(new Runnable() {
+                              @Override
+                              public void run() {
+                                  scroller.fullScroll(ScrollView.FOCUS_DOWN);
+                              }
+                          });
+                      }
+                  });
+              }
+
+              private int dp(int v) {
+                  return (int) (v * getResources().getDisplayMetrics().density);
+              }
+          }
+          PROBE_EOF_4
+
+          find proj -type f | sort
+
+      - name: Fetch the AAR
+        env:
+          # Falls back to the public release the original builder published, so
+          # this workflow produces an APK on its very first run, before this repo
+          # has ever built an AAR of its own.
+          FALLBACK: Amir1402-xyz/lantern-aar
+        run: |
+          mine="https://github.com/${GITHUB_REPOSITORY}/releases/download/aar-latest/lanternsdk-android.aar"
+          theirs="https://github.com/${FALLBACK}/releases/download/aar-latest/lanternsdk-android.aar"
+          if curl -fsSL --retry 2 -o proj/app/libs/lanternsdk-android.aar "$mine"; then
+            echo "using this repo's own aar-latest"
+          else
+            echo "no aar-latest here yet, falling back to ${FALLBACK}"
+            curl -fsSL --retry 3 -o proj/app/libs/lanternsdk-android.aar "$theirs"
+          fi
+          ls -la proj/app/libs/
+          unzip -l proj/app/libs/lanternsdk-android.aar | grep -cE 'jni/.*/libgojni.so'
+
+      - name: Build the debug APKs
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          cd proj
+          gradle --no-daemon --stacktrace assembleDebug 2>&1 | tee ../build.log
+
+      - name: Collect result
+        id: collect
+        run: |
+          mkdir -p out
+          found=no
+          for f in proj/app/build/outputs/apk/debug/*.apk; do
+            [ -e "$f" ] || continue
+            cp "$f" out/
+            found=yes
+          done
+          echo "ok=$found" >> "$GITHUB_OUTPUT"
+          ls -la out/ || true
+
+      - name: Publish the APKs
+        if: steps.collect.outputs.ok == 'yes'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -x
+          {
+            gh release delete probe-latest --repo "$GITHUB_REPOSITORY" --yes --cleanup-tag || echo "delete skipped"
+            gh release create probe-latest out/*.apk \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "Lantern probe" \
+              --notes "Install the arm64-v8a APK, press Run test, send the screen."
+          } 2>&1 | tee publish.log
+
+      - name: Push the log where it can be read
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          mkdir -p logs
+          tail -c 120000 build.log > logs/probe-${GITHUB_RUN_NUMBER}.log 2>/dev/null || echo "no build log" > logs/probe-${GITHUB_RUN_NUMBER}.log
+          tail -c 20000 publish.log >> logs/probe-${GITHUB_RUN_NUMBER}.log 2>/dev/null || true
+          cd host
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git fetch origin ci-logs:ci-logs 2>/dev/null && git checkout ci-logs || git checkout --orphan ci-logs
+          git rm -rq --cached . 2>/dev/null || true
+          rm -rf .github README.md 2>/dev/null || true
+          cp ../logs/*.log .
+          git add -A
+          git commit -q -m "probe run ${GITHUB_RUN_NUMBER}: apk=${{ steps.collect.outputs.ok }}" || exit 0
+          git push -q origin ci-logs
+
+      - name: Fail if no APK
+        if: steps.collect.outputs.ok != 'yes'
+        run: exit 1
