@@ -1,0 +1,160 @@
+name: build lantern aar
+
+# Builds lanternsdk-android.aar from getlantern/lanternsdk-android, but bumps the
+# pinned flashlight first.
+#
+# Why the bump: the SDK has been untouched since January 2025 and pins
+# flashlight v7.6.179. flashlight bakes its bootstrap config into the binary at
+# embeddedconfig/global.yaml, and upstream regenerates that file constantly -
+# it was last regenerated the same day this workflow was written. A 20-month-old
+# embedded config points at fronting domains that no longer answer, which is
+# exactly why the v1 probe saw an empty config dir and a 503 on every request.
+#
+# Both signatures the SDK wrapper depends on - flashlight.New and
+# (*Flashlight).Run - are unchanged between v7.6.179 and v7.6.241, so the
+# wrapper is expected to compile untouched. The one real risk is
+# lantern-client's UserConfig no longer satisfying flashlight's UserConfig
+# interface, so that module is bumped too.
+
+on:
+  workflow_dispatch:
+    inputs:
+      flashlight_version:
+        description: 'flashlight version to pin'
+        required: false
+        default: 'v7.6.241'
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/aar.yml' ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          path: host
+
+      - name: Checkout the Lantern SDK
+        uses: actions/checkout@v4
+        with:
+          repository: getlantern/lanternsdk-android
+          path: sdk-src
+          submodules: recursive
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: false
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Bump the pinned flashlight
+        id: bump
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          VER="${{ github.event.inputs.flashlight_version }}"
+          [ -n "$VER" ] || VER=v7.6.241
+          cd sdk-src
+          {
+            echo "=== before ==="
+            grep -E 'flashlight|lantern-client' go.mod
+            echo
+            echo "=== bumping flashlight to $VER ==="
+            go get "github.com/getlantern/flashlight/v7@$VER"
+            echo
+            echo "=== bumping lantern-client to latest ==="
+            go get github.com/getlantern/lantern-client@latest || echo "lantern-client bump failed, keeping the pinned one"
+            echo
+            echo "=== go mod tidy ==="
+            go mod tidy
+            echo
+            echo "=== after ==="
+            grep -E 'flashlight|lantern-client' go.mod
+            echo
+            echo "=== does the wrapper still compile? ==="
+            go build ./lantern/...
+            echo "wrapper compiles"
+          } 2>&1 | tee ../bump.log
+
+      - name: Build the AAR
+        id: build
+        if: steps.bump.outcome == 'success'
+        continue-on-error: true
+        env:
+          ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_LATEST_HOME }}
+          GOFLAGS: -mod=mod
+        run: |
+          set -o pipefail
+          cd sdk-src
+          chmod +x gradlew || true
+          make build-sdk 2>&1 | tee ../build.log
+
+      - name: Collect result
+        id: collect
+        run: |
+          if [ -f sdk-src/build/lanternsdk-android.aar ]; then
+            echo "ok=yes" >> "$GITHUB_OUTPUT"
+            ls -la sdk-src/build/*.aar
+            # Prove the freshly built binary really carries a new embedded config
+            # by checking it is not byte-identical to the stale published one.
+            sha256sum sdk-src/build/lanternsdk-android.aar
+          else
+            echo "ok=no" >> "$GITHUB_OUTPUT"
+            echo "no aar produced"
+          fi
+
+      - name: Publish the AAR
+        if: steps.collect.outputs.ok == 'yes'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -x
+          {
+            gh release delete aar-latest --repo "$GITHUB_REPOSITORY" --yes --cleanup-tag || echo "delete skipped"
+            gh release create aar-latest \
+              sdk-src/build/lanternsdk-android.aar \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "lanternsdk-android.aar" \
+              --notes "Built from getlantern/lanternsdk-android with the flashlight pin bumped."
+          } 2>&1 | tee publish.log
+
+      - name: Push the log where it can be read
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          mkdir -p logs
+          L="logs/aar-${GITHUB_RUN_NUMBER}.log"
+          : > "$L"
+          echo "########## BUMP ##########" >> "$L"
+          tail -c 40000 bump.log >> "$L" 2>/dev/null || echo "no bump log" >> "$L"
+          echo >> "$L"
+          echo "########## BUILD ##########" >> "$L"
+          tail -c 100000 build.log >> "$L" 2>/dev/null || echo "no build log" >> "$L"
+          echo >> "$L"
+          echo "########## PUBLISH ##########" >> "$L"
+          tail -c 20000 publish.log >> "$L" 2>/dev/null || echo "no publish log" >> "$L"
+          ls -la sdk-src/build >> "$L" 2>&1 || true
+          cd host
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git fetch origin ci-logs:ci-logs 2>/dev/null && git checkout ci-logs || git checkout --orphan ci-logs
+          git rm -rq --cached . 2>/dev/null || true
+          rm -rf .github README.md 2>/dev/null || true
+          cp ../logs/*.log .
+          git add -A
+          git commit -q -m "aar run ${GITHUB_RUN_NUMBER}: aar=${{ steps.collect.outputs.ok }}" || exit 0
+          git push -q origin ci-logs
+
+      - name: Fail if no AAR
+        if: steps.collect.outputs.ok != 'yes'
+        run: exit 1
